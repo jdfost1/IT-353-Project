@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Sign Up for LinkedU</title>
+        
+    </h:head>
+    <h:body>
+        <h2>Sign Up for LinkedU </h2>
+        <h:form>
+            <h:panelGrid columns="4" cellpadding="5">
+                First Name: <p:inputText id="firstName" value="#{LoginBean.firstName}" required="true"></p:inputText>
+                Last  Name: <p:inputText id="lastName" value="#{LoginBean.lastName}"></p:inputText>
+                Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText>
+                Username: <p:inputText id="username" value="#{LoginBean.username}"></p:inputText>
+                High School <p:inputText id="highSchool" value="#{LoginBean.highSchool}"></p:inputText>
+                Password: <p:password id="password" value="#{LoginBean.password}"></p:password>
+                Confirm Password: <p:password id="confirmPassword" value="#{LoginBean.confirmPassword}"></p:password>
+                <p:commandButton id="submit" value="Submit" action="account.xhtml"></p:commandButton>
+            </h:panelGrid>
+        </h:form>
+
+    </h:body>
+</html>
+
