@@ -16,7 +16,7 @@
            <h:inputSecret id="password" value="#{LoginBean.password}">
               
            </h:inputSecret><br/>
-           <h:commandButton value="Login" action="index.xhtml"/>
+           <p:commandButton value="Login" action="#{LoginBean.login()}"/>
        </h:form>
     </h:body>
 </html>

@@ -30,7 +30,7 @@ public class LoginBeanDA {
 
         }//end of catch
         try {
-            String myDB = "jdbs:derby://localhost:1527/LinkedUDB";
+            String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
             Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
 
             String queryString = "select * from itkstu.userlogin where USERNAME = '" + username + "' and PASSWORD = '" + password + "'";

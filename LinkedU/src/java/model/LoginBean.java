@@ -13,7 +13,7 @@ import javax.faces.bean.RequestScoped;
  *
  * @author it353s833
  */
-@ManagedBean
+@ManagedBean(name="LoginBean")
 @RequestScoped
 public class LoginBean {
 
@@ -23,6 +23,15 @@ public class LoginBean {
     private String firstName;
     private String lastName;
     private String errorResponse ="";
+    private String highSchool;
+
+    public String getHighSchool() {
+        return highSchool;
+    }
+
+    public void setHighSchool(String highSchool) {
+        this.highSchool = highSchool;
+    }
 
     public String getErrorResponse() {
         return errorResponse;
@@ -108,7 +117,7 @@ public class LoginBean {
             + "! Welcome to your account!");
     return "account.xhtml";
         }//end of else statement
-return "account.xhtml";
+return "badLogin.xhtml";
     }//end of login method
     
     /**
