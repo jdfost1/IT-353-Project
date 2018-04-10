@@ -1,0 +1,8 @@
+			To-DO-LIST
+
+-Password Confirmation (passwords match) on SignUP page using AJAX
+-Send SMS and email for successful signup
+-Complete web page GUI for index
+-Complete web page GUI for account page
+-Complete web page GUI for login page
+-create and add logo
