@@ -6,3 +6,4 @@
 -Complete web page GUI for account page
 -Complete web page GUI for login page
 -create and add logo
+-salt passwords in database
