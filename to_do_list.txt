@@ -1,5 +1,5 @@
 			To-DO-LIST
-
+		********IDEAS******************************************************************************************
 -Password Confirmation (passwords match) on SignUP page using AJAX
 -Send SMS and email for successful signup
 -Complete web page GUI for index
@@ -10,6 +10,29 @@
 -add web services to account page
 -add "return home" button (index page) to account,sign up, and login?
 
+		*********PROJECT CHECK LIST FROM PROFESSOR***************************************************************
+*Sign-in User (COMPLETE)
+*Sign up Account (COMPLETE)
+-Search for Students
+-Search for Universities
+-View Detailed Posting (of a student/university)
+-Apply for Admission (which may necessitate special, additional info from students depending on the target universities)
+-Upload Materials (including image(s) and video(s)) 
+-Schedule Appointment (with Email confirmation)
+-Request for More Information (from a student/university)
+-Highlight (Special Showcase) University 
+-Mark universities for showcase <== Admin only
+-Compare Postings (of students/universities)
+
+			*******ADVANCED************************************************************************
+-Show Similar Mixtapes (via YouTube Web services (see ISUYouTubeWS)) 
+-Show Map of Posting (via Web services (e.g., Google Maps))
+-Unsubscribe from Mailing (student/university)
+-Update Posting (student/university)
+-Report xxx (e.g., most viewed Postings, most request-for-info on a Posting, etc.)
+-Retrieve lost password (must send an email to reset password, etc.)
+-Send SMS (in addition to email, if one chooses to have this option)
+-Others?
 
 
 Josh (working on..)
