@@ -6,10 +6,10 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Sign Up for LinkedU</title>
-        
+
     </h:head>
     <h:body>
-        <h2>Sign Up for LinkedU </h2>
+        <center><h2>Sign up and join linkedU! </h2></center>
         <h:form>
             <h:panelGrid columns="4" cellpadding="5">
                 First Name: <p:inputText id="firstName" value="#{LoginBean.firstName}" required="true"></p:inputText>
@@ -17,8 +17,16 @@
                 Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText>
                 Username: <p:inputText id="username" value="#{LoginBean.username}"></p:inputText>
                 High School <p:inputText id="highSchool" value="#{LoginBean.highSchool}"></p:inputText>
-                Password: <p:password id="password" value="#{LoginBean.password}"></p:password>
-               
+                Password: <p:password placeholder="enter password" id="password" value="#{LoginBean.password}"></p:password>
+                Confirm Password: <p:password placeholder="confirm password" id="password2" ></p:password>
+                Current Sports: <p:inputText placeholder="(optional)" id="sports" value="#{LoginBean.sports}"></p:inputText>
+                GPA: <p:inputText placeholder="0.00" id="gpa" value="#{LoginBean.gpa}"></p:inputText>
+                SAT SCORE: <p:inputText placeholder="(optional)" id="sat" value="#{LoginBean.sat}"></p:inputText>
+                University of Choice: <p:inputText placeholder="(optional)" id="university" value="#{LoginBean.university}"></p:inputText>
+                Major of Choice: <p:inputText id="major" value="#{LoginBean.major}"></p:inputText>
+                Awards: <p:inputText placeholder="(optional)" id="awards" value="#{LoginBean.awards}"></p:inputText>
+                Clubs: <p:inputText placeholder="(optional)" id="clubs" value="#{LoginBean.clubs}"></p:inputText>
+                <br/>
                 <p:commandButton id="submit" value="Submit" action="#{LoginBean.createProfile()}"></p:commandButton>
             </h:panelGrid>
         </h:form>

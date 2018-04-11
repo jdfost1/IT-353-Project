@@ -25,6 +25,70 @@ public class LoginBean {
     private String errorResponse ="";
     private String highSchool;
     private String confirmPassword="";
+    private String sports;
+    private double gpa;
+     private int sat;
+    private String university;
+    private String major;
+    private String awards;
+    private String clubs;
+
+    public String getSports() {
+        return sports;
+    }
+
+    public void setSports(String sports) {
+        this.sports = sports;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public int getSat() {
+        return sat;
+    }
+
+    public void setSat(int sat) {
+        this.sat = sat;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getAwards() {
+        return awards;
+    }
+
+    public void setAwards(String awards) {
+        this.awards = awards;
+    }
+
+    public String getClubs() {
+        return clubs;
+    }
+
+    public void setClubs(String clubs) {
+        this.clubs = clubs;
+    }
+   
 
     public String getHighSchool() {
         return highSchool;

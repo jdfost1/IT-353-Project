@@ -24,13 +24,21 @@ and open the template in the editor.
             <p:commandButton id="studentSearch" value="Search" action="#{AccountBean.searchStudent(AccountBean.student)}"/>
         </h:form>
         <br/><br/>
-        <h2>My Profile</h2><br/>
+        <center><h2>My Profile</h2></center><br/>
+        
         <h:form>
             First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br/><br/>
             Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br/><br/>
             Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br/><br/>
             Username: <p:outputLabel id="username" value="#{LoginBean.username}"></p:outputLabel><br/><br/>
             High School <p:outputLabel id="highSchool" value="#{LoginBean.highSchool}"></p:outputLabel><br/><br/>
+            Current Sports: <p:outputLabel  id="sports" value="#{LoginBean.sports}"></p:outputLabel><br/><br/>
+            GPA: <p:outputLabel  id="gpa" value="#{LoginBean.gpa}"></p:outputLabel><br/><br/>
+            SAT SCORE: <p:outputLabel  id="sat" value="#{LoginBean.sat}"></p:outputLabel><br/><br/>
+            University of Choice: <p:outputLabel  id="university" value="#{LoginBean.university}"></p:outputLabel><br/><br/>
+            Major of Choice: <p:outputLabel id="major" value="#{LoginBean.major}"></p:outputLabel><br/><br/>
+            Awards: <p:outputLabel id="awards" value="#{LoginBean.awards}"></p:outputLabel><br/><br/>
+            Clubs: <p:outputLabel id="clubs" value="#{LoginBean.clubs}"></p:outputLabel><br/><br/>
 
             <!--            prime face style not applying to command buttons??-->
             <p:commandButton id="updateAccount" value="Update" action="accountUpdate.xhtml"/>
