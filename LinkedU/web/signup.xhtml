@@ -18,8 +18,8 @@
                 Username: <p:inputText id="username" value="#{LoginBean.username}"></p:inputText>
                 High School <p:inputText id="highSchool" value="#{LoginBean.highSchool}"></p:inputText>
                 Password: <p:password id="password" value="#{LoginBean.password}"></p:password>
-                Confirm Password: <p:password id="confirmPassword" value="#{LoginBean.confirmPassword}"></p:password>
-                <p:commandButton id="submit" value="Submit" action="account.xhtml"></p:commandButton>
+               
+                <p:commandButton id="submit" value="Submit" action="#{LoginBean.createProfile()}"></p:commandButton>
             </h:panelGrid>
         </h:form>
 

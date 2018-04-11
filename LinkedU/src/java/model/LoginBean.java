@@ -24,6 +24,7 @@ public class LoginBean {
     private String lastName;
     private String errorResponse ="";
     private String highSchool;
+    private String confirmPassword="";
 
     public String getHighSchool() {
         return highSchool;
@@ -125,9 +126,85 @@ return "badLogin.xhtml";
      */
     public void setAccountResponse(String accountResponse) {
         this.accountResponse = accountResponse;
-    }
-     
+    }//end of set account response method
+    
+    public boolean checkEmail(){
+        boolean result = true;
+        int atPosition = email.indexOf("@");
+        if (atPosition == -1 // must have an @ sign
+                || atPosition == 0 // no @ at the beginning
+                || atPosition == email.length() - 1) // no @ at the end
+        {
+            result = false;
+        } else {
+            atPosition = email.indexOf("@", atPosition + 1);
+            if (atPosition != -1) {
+                result = false; //more than one @ symbol
+            }
+        }
 
+        if (result) {
+            //check periods
+            if(email.charAt(0)=='.'||email.charAt(email.length()-1)=='.'){
+                result=false;
+            }else{
+                atPosition = email.indexOf("@");
+                int periodPos = email.indexOf(".", atPosition+1);
+                if(email.charAt(atPosition-1)=='.'||periodPos==atPosition+1||periodPos == -1){
+                    result=false;
+                }
+            }
+        }
+
+        if(!result){
+            errorResponse = "Invalid email address";
+        }
+        return result;
+
+    }//end of check email method
+    
+       public boolean checkUserName() {
+        if (username.length() < 6 || username.length() > 12) {
+            errorResponse = "Username must be between 6 and 12 characters";
+            return false;
+        }
+        if(LoginBeanDA.usernameTaken(username)){
+            errorResponse = "Username '"+username+"' has already been taken";
+            return false;
+        }
+        return true;
+    }
+
+    public boolean checkPassword() {
+        if (password.length() < 6 || password.length() > 12) {
+            errorResponse = "Password must be between 6 and 12 characters";
+            return false;
+        }
+        return true;
+    }
+     public boolean checkName(){
+        if(firstName.equals("") || lastName.equals("")){
+            errorResponse = "Please enter your name";
+            return false;
+        }
+        return true;
+    }//end of check name
+
+     
+public String createProfile(){
+int error = 0;
+        errorResponse = "";
+        
+        if (checkName()&&checkUserName() && checkPassword()&&checkEmail()) {
+            error = LoginBeanDA.storeCustomerToDB(this);
+        }
+        if (error == 0) {
+            return "signup.xhtml";
+        }
+        login();
+        return "account.xhtml";
+
+}//end of create profile method
     
 
 }
