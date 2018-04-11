@@ -7,3 +7,24 @@
 -Complete web page GUI for login page
 -create and add logo
 -salt passwords in database
+-add web services to account page
+
+
+
+Josh (working on..)
+-------------------------
+*signup page and login page backend (database functionality)
+
+-------------------------
+
+
+
+
+
+
+Luke (working on....)
+------------------------
+*
+*
+
+------------------------
