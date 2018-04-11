@@ -6,23 +6,36 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      >
     <head>
         <title>Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-    </head>
-    <body>
-        <h1><p:outputLabel id="first" value="#{LoginBean.firstName}">'s Account</p:outputLabel></h1>
-        
-        First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br></br>
-        Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br></br>
-        Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br></br>
-        Username: <p:outputLabel id="username" value="#{LoginBean.username}"></p:outputLabel><br></br>
-        High School <p:outputLabel id="highSchool" value="#{LoginBean.highSchool}"></p:outputLabel><br></br>
-        <h3>Want to get noticed? Complete your profile to get more attention.</h3><br></br>
-        <p:commandButton id="updateAccount" value="Update" action="accountUpdate.xhtml"></p:commandButton>
-        
 
+    </head>
+
+    <body>
+        <h:form>
+            <center><h1><h:outputLabel id="first" value="#{LoginBean.firstName}">'s Account</h:outputLabel></h1></center><br/>
+           
+            <h2><h:outputLabel id="searchbar" value="Search students"></h:outputLabel></h2>
+            <h:inputText id="student" value="#{AccountBean.student}"/>
+            <p:commandButton id="studentSearch" value="Search" action="#{AccountBean.searchStudent(AccountBean.student)}"/>
+        </h:form>
+        <br/><br/>
+        <h2>My Profile</h2><br/>
+        <h:form>
+            First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br/><br/>
+            Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br/><br/>
+            Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br/><br/>
+            Username: <p:outputLabel id="username" value="#{LoginBean.username}"></p:outputLabel><br/><br/>
+            High School <p:outputLabel id="highSchool" value="#{LoginBean.highSchool}"></p:outputLabel><br/><br/>
+
+            <!--            prime face style not applying to command buttons??-->
+            <p:commandButton id="updateAccount" value="Update" action="accountUpdate.xhtml"/>
+            <p:commandButton id="homepage" value="Return Home" action="index.xhtml"/>
+        </h:form>
+        <h3>Want to get noticed? Complete your profile to get more attention.</h3><br/><br/>
     </body>
 </html>
