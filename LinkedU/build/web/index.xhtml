@@ -3,20 +3,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      style="background-color:black; color:lime;"
+      style="background-color:blue; color:white;"
       >
     <h:head>
         <title>LinkedU</title>
     </h:head>
-    
-    <h1>Hello welcome to linkedU</h1>
+    <div style="background-color:white;">
+    <center><img style="width:250px; height:350px;" src="resources/images/LinkedULogo.png"/></center>
+     </div>
+    <center><h1>Hello welcome to linkedU!</h1></center>
+   
     <h:body>
         <h:form>
-            <p:commandButton value="Sign Up" action="signup.xhtml"/>
-            <p:commandButton value="Login" action="login.xhtml"/>
+            <center><p:outputLabel>New user? Click SignUp and create a free account!</p:outputLabel>
+            
+            <p:outputLabel><pre>Existing user? Login!   </pre></p:outputLabel></center><br/><br/>
+            <center><p:commandButton value="Sign Up" action="signup.xhtml"/>
+            
+            <p:commandButton value="Login" action="login.xhtml"/><br/></center>
             
         </h:form>
       
-    </h:body>
+    </h:body><br/><br/>
+    <h2>OUR MISSION:</h2>
+     
+    <pre>
+    Our mission is to provide high school students with the best oppurtunity that they deserve. We want to accomplish this by connecting high school students with Universities all around the world.
+High School students can create a profile to show off their GPA, projects, awards, athletic ability, community involvment, and much more! Not only do we want to empower high school students, but 
+we also want to give universities a head start at recruiting their future stars and alumni.
+    </pre>
 </html>
 
