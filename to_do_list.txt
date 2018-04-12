@@ -38,6 +38,7 @@
 Josh (working on..)
 -------------------------
 *signup page and login page backend (database functionality)
+*working on search for students method with db functionality
 
 -------------------------
 
