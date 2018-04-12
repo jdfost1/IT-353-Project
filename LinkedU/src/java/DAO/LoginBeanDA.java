@@ -107,12 +107,13 @@ public static int storeCustomerToDB(LoginBean cust) {
                     + "', '" +cust.getLastName()
                     + "', '" +cust.getHighSchool()
                     + "', '" +cust.getSports()
-                    + "', '" +cust.getGpa()
-                    + "', '" +cust.getSat()
+                    
                     + "', '" +cust.getUniversity()
                     + "', '" +cust.getMajor()
                     + "', '" +cust.getAwards()
                     + "', '" +cust.getClubs()
+                    + "', '" +cust.getGpa()
+                    + "', '" +cust.getSat()
                     + "')";
             rowCount = stmt.executeUpdate(insertString);
             System.out.println("insert string =" + insertString);
