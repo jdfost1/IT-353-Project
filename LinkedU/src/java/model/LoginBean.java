@@ -267,5 +267,5 @@ public class LoginBean {
         return "account.xhtml";
 
     }//end of create profile method
-
+    
 }

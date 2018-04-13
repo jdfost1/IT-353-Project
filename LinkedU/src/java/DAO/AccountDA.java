@@ -55,6 +55,50 @@ public class AccountDA {
         return null;
 
     }//end of search student method
+    
+    
+//    public static AccountBean updateProfile() {
+//        AccountBean lb = null;
+//
+//        try {
+//            Class.forName("org.apache.derby.jdbc.ClientDriver");
+//        } catch (ClassNotFoundException e) {
+//
+//            System.err.println(e.getMessage());
+//            System.exit(0);
+//
+//        }//end of catch
+//
+//        try {
+//            String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
+//            Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
+//            String insertString ="INSERT INTO USERLOGIN(";
+//            String valueString = "VALUES(";
+//            if(lb.getSports() != null){
+//                insertString+= "sports";
+//                valueString+= "'" + lb.getSports() +"')";
+//            }
+//                    
+//            Statement stmt = DBConn.createStatement();
+//            ResultSet rs = stmt.executeQuery(insertString + valueString);
+//            boolean r = rs.next();
+//            if (r) {
+//                lb = new AccountBean();
+//                lb.setSports(rs.getString("sports"));
+////                lb.setFirstName(rs.getString("firstName"));
+////                lb.setLastName(rs.getString("lastName"));
+////                lb.setMajor(rs.getString("major"));
+////                lb.setHighschool(rs.getString("highschool"));
+//
+//            }//end of try
+//            DBConn.close();
+//            return lb;
+//        } catch (SQLException e) {
+//            System.err.println(e.getMessage());
+//        }
+//        return null;
+//
+//    }//end of search student method
 
    
 }//end of class

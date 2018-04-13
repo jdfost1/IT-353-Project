@@ -24,6 +24,11 @@ public class AccountBean {
     String highschool;
     String sports;
     String university;
+    String major;
+    String awards;
+    String clubs;
+    String gpa;
+    String sat;
 
     public String getProfileResponse() {
         return profileResponse;
@@ -129,11 +134,7 @@ public class AccountBean {
     public void setSat(String sat) {
         this.sat = sat;
     }
-    String major;
-    String awards;
-    String clubs;
-    String gpa;
-    String sat;
+   
             
     
     
@@ -171,5 +172,7 @@ public class AccountBean {
         return "badLogin.xhtml";
     
     }//end of search student
+    
+
 
 }

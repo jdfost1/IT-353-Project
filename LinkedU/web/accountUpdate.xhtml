@@ -8,25 +8,30 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <head>
+    <h:head>
         <title>Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    </head>
-    <body>
+    </h:head>
+    <h:body>
         <h1><p:outputLabel id="first" value="#{LoginBean.firstName}">'s Account</p:outputLabel></h1>
 
-        First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br></br>
-        Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br></br>
-        Username: <p:outputLabel id="username" value="#{LoginBean.username}"></p:outputLabel><br></br>
-        Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br></br>
-        High School <p:outputLabel id="highSchool" value="#{LoginBean.highSchool}"></p:outputLabel><br></br>
+        First Name: <p:outputLabel id="firstName" value="#{AccountBean.firstName}"></p:outputLabel><br></br>
+        Last  Name: <p:outputLabel id="lastName" value="#{AccountBean.lastName}"></p:outputLabel><br></br>
+        Username: <p:outputLabel id="username" value="#{AccountBean.username}"></p:outputLabel><br></br>
+        Email Address: <p:outputLabel id="email" value="#{AccountBean.email}"></p:outputLabel><br></br>
+        High School <p:outputLabel id="highSchool" value="#{AccountBean.highSchool}"></p:outputLabel><br></br>
         <h:form>
             Current Sports: <p:inputText id="sports" value="#{LoginBean.sports}"></p:inputText><br></br>    
             GPA: <p:inputText id="gpa" value="#{LoginBean.gpa}"></p:inputText><br></br>
             SAT Score: <p:inputText id="sat" value="#{LoginBean.sat}"></p:inputText><br></br>
+            University of Choice: <p:inputText id="university" value="#{LoginBean.university}"></p:inputText><br></br>
+            Major of choice: <p:inputText id="major" value="#{LoginBean.major}"></p:inputText><br></br>
+            Awards: <p:inputText id="awards" value="#{LoginBean.awards}"></p:inputText><br></br>
+            Clubs: <p:inputText id="clubs" value="#{LoginBean.clubs}"></p:inputText><br></br>
+            <p:commandButton id="saveButton" value="Save" action="#{AccountBean.updateProfile()}"></p:commandButton>
         </h:form>
 
 
-    </body>
+    </h:body>
 </html>
