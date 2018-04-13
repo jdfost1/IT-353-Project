@@ -6,7 +6,8 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <head>
         <title>Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,16 +18,14 @@ and open the template in the editor.
 
         First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br></br>
         Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br></br>
-        Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br></br>
         Username: <p:outputLabel id="username" value="#{LoginBean.username}"></p:outputLabel><br></br>
+        Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br></br>
         High School <p:outputLabel id="highSchool" value="#{LoginBean.highSchool}"></p:outputLabel><br></br>
-        <h3>Complete as many fields as you can. The more information you provide, the more you'll stand out to colleges</h3><br></br>
-        ACT Score: <p:inputText id="firstName" value="#{LoginBean.firstName}" required="true"></p:inputText>
-        SAT Score: <p:inputText id="lastName" value="#{LoginBean.lastName}"></p:inputText>
-        Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText>
-        Username: <p:inputText id="username" value="#{LoginBean.username}"></p:inputText>
-        High School <p:inputText id="highSchool" value="#{LoginBean.highSchool}"></p:inputText>
-
+        <h:form>
+            Current Sports: <p:inputText id="sports" value="#{LoginBean.sports}"></p:inputText><br></br>    
+            GPA: <p:inputText id="gpa" value="#{LoginBean.gpa}"></p:inputText><br></br>
+            SAT Score: <p:inputText id="sat" value="#{LoginBean.sat}"></p:inputText><br></br>
+        </h:form>
 
 
     </body>
