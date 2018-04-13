@@ -12,7 +12,7 @@ and open the template in the editor.
     <head>
         <title>Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -25,7 +25,7 @@ and open the template in the editor.
         </h:form>
         <br/><br/>
         <center><h2>My Profile</h2></center><br/>
-        
+                <h3 class="updateSpan">Is your account complete? Completed profiles generate more views.</h3>
         <h:form>
             First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br/><br/>
             Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br/><br/>
@@ -44,7 +44,8 @@ and open the template in the editor.
             <p:commandButton id="updateAccount" value="Update" action="accountUpdate.xhtml"/>
             <p:commandButton id="homepage" value="Return Home" action="index.xhtml"/>
         </h:form>
-        <h3>Want to get noticed? Complete your profile to get more attention.</h3><br/><br/>
+        
+        <br/><br/>
     </body>
    
 </html>
