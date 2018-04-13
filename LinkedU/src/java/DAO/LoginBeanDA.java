@@ -24,7 +24,7 @@ public class LoginBeanDA {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
-           
+
             System.err.println(e.getMessage());
             System.exit(0);
 
@@ -42,27 +42,18 @@ public class LoginBeanDA {
                 lb.setEmail(rs.getString("email"));
                 lb.setFirstName(rs.getString("firstName"));
                 lb.setLastName(rs.getString("lastName"));
-<<<<<<< HEAD
-                lb.setUsername(rs.getString("username"));
-                lb.setHighSchool(rs.getString("highschool"));
-                lb.setGpa(rs.getDouble("gpa"));
-                lb.setSat(rs.getInt("sat"));
-                lb.setAwards(rs.getString("awards"));
-                lb.setClubs(rs.getString("clubs"));
-                lb.setMajor(rs.getString("major"));
-                lb.setUniversity(rs.getString("university"));
+//                lb.setAwards(rs.getString("awards"));
+//                lb.setHighSchool(rs.getString("highschool"));
+//                lb.setUniversity(rs.getString("university"));
+//                lb.setSports(rs.getString("sports"));
+//                lb.setMajor((rs.getString("major")));
+//                lb.setGpa(Double.parseDouble("gpa"));
+//                lb.setSat(Integer.parseInt(rs.getString("sat")));
+//                               
                 
-=======
-                lb.setAwards(rs.getString("awards"));
-                lb.setHighSchool(rs.getString("highschool"));
-                lb.setUniversity(rs.getString("university"));
-                lb.setSports(rs.getString("sports"));
-                lb.setMajor((rs.getString("major")));
-                lb.setGpa(Double.parseDouble("gpa"));
-                lb.setSat(Integer.parseInt(rs.getString("sat")));
-                
-               
->>>>>>> 0131696a33775e917e8816f7f47f6d0fdc374581
+
+              
+
                 
 
             }
@@ -74,11 +65,9 @@ public class LoginBeanDA {
         }
         return null;
 
-  
+    }//end of validInfo
 
-}//end of validInfo
-    
-     public static boolean usernameTaken(String username){
+    public static boolean usernameTaken(String username) {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
@@ -88,7 +77,6 @@ public class LoginBeanDA {
         try {
             String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
             Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
-
 
             String queryString = "select * from itkstu.userlogin where USERNAME = '" + username + "'";
             Statement stmt = DBConn.createStatement();
@@ -105,9 +93,8 @@ public class LoginBeanDA {
         }
         return false;
     }//end of check user name method
-     
-     
-public static int storeCustomerToDB(LoginBean cust) {
+
+    public static int storeCustomerToDB(LoginBean cust) {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
@@ -124,18 +111,17 @@ public static int storeCustomerToDB(LoginBean cust) {
             insertString = "INSERT INTO itkstu.userlogin VALUES ('"
                     + cust.getUsername()
                     + "', '" + cust.getPassword()
-                    + "', '" +cust.getEmail()
-                    +"', '"  +cust.getFirstName()
-                    + "', '" +cust.getLastName()
-                    + "', '" +cust.getHighSchool()
-                    + "', '" +cust.getSports()
-                    
-                    + "', '" +cust.getUniversity()
-                    + "', '" +cust.getMajor()
-                    + "', '" +cust.getAwards()
-                    + "', '" +cust.getClubs()
-                    + "', '" +cust.getGpa()
-                    + "', '" +cust.getSat()
+                    + "', '" + cust.getEmail()
+                    + "', '" + cust.getFirstName()
+                    + "', '" + cust.getLastName()
+                    + "', '" + cust.getHighSchool()
+                    + "', '" + cust.getSports()
+                    + "', '" + cust.getUniversity()
+                    + "', '" + cust.getMajor()
+                    + "', '" + cust.getAwards()
+                    + "', '" + cust.getClubs()
+                    + "', '" + cust.getGpa()
+                    + "', '" + cust.getSat()
                     + "')";
             rowCount = stmt.executeUpdate(insertString);
             System.out.println("insert string =" + insertString);
@@ -147,6 +133,5 @@ public static int storeCustomerToDB(LoginBean cust) {
         return rowCount;
 
     }
-
 
 }//end of class
