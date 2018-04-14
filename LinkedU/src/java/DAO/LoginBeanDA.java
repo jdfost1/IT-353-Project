@@ -42,14 +42,14 @@ public class LoginBeanDA {
                 lb.setEmail(rs.getString("email"));
                 lb.setFirstName(rs.getString("firstName"));
                 lb.setLastName(rs.getString("lastName"));
-//                lb.setAwards(rs.getString("awards"));
-//                lb.setHighSchool(rs.getString("highschool"));
-//                lb.setUniversity(rs.getString("university"));
-//                lb.setSports(rs.getString("sports"));
-//                lb.setMajor((rs.getString("major")));
-//                lb.setGpa(Double.parseDouble("gpa"));
-//                lb.setSat(Integer.parseInt(rs.getString("sat")));
-//                               
+                lb.setAwards(rs.getString("awards"));
+                lb.setHighSchool(rs.getString("highschool"));
+               lb.setUniversity(rs.getString("university"));
+                lb.setSports(rs.getString("sports"));
+                lb.setMajor((rs.getString("major")));
+                //lb.setGpa(Double.parseDouble("gpa"));
+               // lb.setSat(Integer.parseInt(rs.getString("sat")));
+                              
                 
 
               

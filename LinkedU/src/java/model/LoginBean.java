@@ -143,6 +143,12 @@ public class LoginBean {
         setEmail(lb.getEmail());
         setFirstName(lb.getFirstName());
         setLastName(lb.getLastName());
+        setHighSchool(lb.getHighSchool());
+        setSports(lb.getSports());
+        setUniversity(lb.getUniversity());
+        setMajor(lb.getMajor());
+        setAwards(lb.getAwards());
+        setClubs(lb.getClubs());
 
     }
 
