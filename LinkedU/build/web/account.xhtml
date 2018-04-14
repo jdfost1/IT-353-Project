@@ -17,15 +17,22 @@ and open the template in the editor.
 
     <h:body>
         <h:form>
-            <center><h1><h:outputLabel id="first" value="#{LoginBean.firstName}">'s Account</h:outputLabel></h1></center><br/>
+            <center><h1><h:outputLabel id="first" >My Profile</h:outputLabel></h1></center><br/>
            
-            <h2><h:outputLabel id="searchbar" value="Search students"></h:outputLabel></h2>
+            <div align="left" style="background-color:slategray">
+            <h2><h:outputLabel id="searchbar" value="Search for Student"></h:outputLabel></h2>
             <h:inputText id="student" value="#{AccountBean.student}"/>
             <p:commandButton id="studentSearch" value="search" action="#{AccountBean.searchStudent(AccountBean.student)}"/>
+            </div>
+            <div align="left" style="background-color:slategray">
+            <h2><h:outputLabel id="searchbar" value="Search for University"></h:outputLabel></h2>
+            <h:inputText id="student" value="#{AccountBean.student}"/>
+            <p:commandButton id="studentSearch" value="search" action="#{AccountBean.searchStudent(AccountBean.student)}"/>
+            </div>
         </h:form>
         <br/><br/>
-        <center><h2>My Profile</h2></center><br/>
-                <h3 class="updateSpan">Is your account complete? Completed profiles generate more views.</h3>
+        
+               <center> <h3 class="updateSpan">Is your account complete? Completed profiles generate more views.</h3></center>
         <h:form>
             First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br/><br/>
             Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br/><br/>
