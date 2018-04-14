@@ -5,6 +5,8 @@
  */
 package model;
 
+import DAO.UniversityDA;
+import static DAO.UniversityDA.storeUniversityToDB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -31,10 +33,11 @@ public class UniversityBean {
      */
     public UniversityBean() {
     }
-    public void createUniversity(){
+    public String createUniversity(){
+        storeUniversityToDB(this);
         
     //add university to data base
-    
+    return "University.xhtml";
     }//end of create university
 
     public String getCollegeName() {
