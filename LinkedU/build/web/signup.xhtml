@@ -14,6 +14,7 @@
         <center><h2>Sign up and join linkedU! </h2></center>
         <div align="center"><h:form>
             <h:panelGrid columns="4" cellpadding="5">
+               
                 First Name: <p:inputText id="firstName" value="#{LoginBean.firstName}" required="true"></p:inputText>
                 Last  Name: <p:inputText id="lastName" value="#{LoginBean.lastName}"></p:inputText>
                 Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText>
@@ -28,7 +29,11 @@
                 Major of Choice: <p:inputText id="major" value="#{LoginBean.major}"></p:inputText>
                 Awards: <p:inputText placeholder="(optional)" id="awards" value="#{LoginBean.awards}"></p:inputText>
                 Clubs: <p:inputText placeholder="(optional)" id="clubs" value="#{LoginBean.clubs}"></p:inputText>
-                <br/>
+                Upload Profile Picture: 
+
+        <p:fileUpload fileUploadListener="#{fileUploadController.upload}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1000000"/>
+       
+    <br/>
                 
                 <p:commandButton id="submit" value="Submit" action="#{LoginBean.createProfile()}"></p:commandButton>
                
