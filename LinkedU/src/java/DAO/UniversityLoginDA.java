@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package DAO;
+
+import model.UniversityBean;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+/**
+ *
+ * @author IT353S833
+ */
+public class UniversityLoginDA {
+    
+    public static UniversityBean validInfo(String username, String password){
+    UniversityBean lb = null;
+    try{
+    Class.forName("org.apache.derby.jdbc.ClientDriver");
+    } catch (ClassNotFoundException e){
+    System.err.println(e.getMessage());
+    System.exit(0);
+    }//end of catch
+    
+   try{
+    String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
+    Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
+    
+    String queryString = "select * from itkstu.universities where USERNAME = '" + username + "' and PASSWORD = '" + password + "'";
+    Statement stmt =DBConn.createStatement();
+    ResultSet rs = stmt.executeQuery(queryString);
+    boolean r = rs.next();
+    
+    if(r){
+        lb = new UniversityBean();
+        lb.setCollegeName(rs.getString("collegename"));
+        lb.setCity(rs.getString("city"));
+        lb.setState(rs.getString("state"));
+        lb.setMascot(rs.getString("mascot"));
+        lb.setAddress(rs.getString("address"));
+        lb.setPhone(rs.getString("phone"));
+        lb.setTuition(rs.getString("tuitionrate"));
+        lb.setEnrollment(rs.getString("enrollment"));
+        
+        
+        
+    }//end of if statement
+    DBConn.close();
+    return lb;
+   
+   }catch(SQLException e){
+   System.err.println(e.getMessage());
+   }//end of catch
+          return null;  
+   
+    
+    
+    }//end of validInfo method
+    
+}

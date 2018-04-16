@@ -2,20 +2,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-       xmlns:p="http://primefaces.org/ui"
-       style="background-color:red; color:white;">
+      xmlns:p="http://primefaces.org/ui"
+      style="background-color:red; color:white;">
     <h:head>
         <title>University Page</title>
     </h:head>
     <h:body> **this page should require administrator login only
-      <center><h2>University Profile</h2></center><br/>
-                
+        <center><h2>University Profile</h2></center><br/>
+
         <h:form>
-            <p:outputLabel id="collegeName" value="#{University.collegeName}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="city" value="#{University.city}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="state" value="#{University.state}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="tution" value="#{University.tuition}"></p:outputLabel><br/><br/>
-            
+            <p:outputLabel id="collegeName" value="#{UniversityBean.collegeName}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="city" value="#{UniversityBean.city}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="state" value="#{UniversityBean.state}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="address" value="#{UniversityBean.address}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="phone" value="#{UniversityBean.phone}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="mascot" value="#{UniversityBean.mascot}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="enrollment" value="#{UniversityBean.enrollment}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="tution" value="#{UniversityBean.tuition}"></p:outputLabel><br/><br/>
+
+
 
             <!--            prime face style not applying to command buttons??-->
             <p:commandButton id="updateAccount" value="Update" action="accountUpdate.xhtml"/>

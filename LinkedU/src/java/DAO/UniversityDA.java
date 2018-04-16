@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package DAO;
+
 import model.UniversityBean;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,11 +18,10 @@ import java.sql.Statement;
  * @author IT353S833
  */
 public class UniversityDA {
-    
-    
-    public static int storeUniversityToDB(UniversityBean university){
-    
-     try {
+
+    public static int storeUniversityToDB(UniversityBean university) {
+
+        try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
             System.err.println(e.getMessage());
@@ -43,7 +43,8 @@ public class UniversityDA {
                     + "', '" + university.getPhone()
                     + "', '" + university.getTuition()
                     + "', '" + university.getEnrollment()
-                    
+                    + "', '" + university.getUsername()
+                    + "', '" + university.getPassword()
                     + "')";
             rowCount = stmt.executeUpdate(insertString);
             System.out.println("insert string =" + insertString);
@@ -54,9 +55,6 @@ public class UniversityDA {
         // if insert is successful, rowCount will be set to 1 (1 row inserted successfully). Else, insert failed.
         return rowCount;
 
-   
-
-    
     }//end of store university to DB method
-    
+
 }//end of class

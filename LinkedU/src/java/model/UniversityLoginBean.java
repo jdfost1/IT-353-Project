@@ -5,8 +5,7 @@
  */
 package model;
 
-import DAO.UniversityDA;
-import static DAO.UniversityDA.storeUniversityToDB;
+import DAO.UniversityLoginDA;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -14,10 +13,14 @@ import javax.faces.bean.SessionScoped;
  *
  * @author IT353S833
  */
-@ManagedBean(name="UniversityBean")
+@ManagedBean(name = "UniversityLoginBean")
 @SessionScoped
-public class UniversityBean {
+public class UniversityLoginBean {
 
+    String adminUsername;
+    String adminPassword;
+    String errorResponse;
+    private boolean login = false;
     String collegeName;
     String city;
     String state;
@@ -27,36 +30,22 @@ public class UniversityBean {
     String enrollment;
     String mascot;
     String dean;
-    String username;
-    String password;
 
-    public String getUsername() {
-        return username;
+    public String getErrorResponse() {
+        return errorResponse;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setErrorResponse(String errorResponse) {
+        this.errorResponse = errorResponse;
     }
 
-    public String getPassword() {
-        return password;
+    public boolean isLogin() {
+        return login;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setLogin(boolean login) {
+        this.login = login;
     }
-
-    /**
-     * Creates a new instance of UniversityBean
-     */
-    public UniversityBean() {
-    }
-    public String createUniversity(){
-        storeUniversityToDB(this);
-        
-    //add university to data base
-    return "University.xhtml";
-    }//end of create university
 
     public String getCollegeName() {
         return collegeName;
@@ -129,5 +118,54 @@ public class UniversityBean {
     public void setDean(String dean) {
         this.dean = dean;
     }
+
+    /**
+     * Creates a new instance of UniversityLoginBean
+     */
+    public UniversityLoginBean() {
+    }
+
+    public String getAdminUsername() {
+        return adminUsername;
+    }
+
+    public void setAdminUsername(String adminUsername) {
+        this.adminUsername = adminUsername;
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
+
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
+    }
+
+    public void updateFrom(UniversityBean lb) {
+        setCollegeName(lb.getCollegeName());
+        setCity(lb.getCity());
+        setState(lb.getState());
+        setMascot(lb.getMascot());
+        setAddress(lb.getAddress());
+        setPhone(lb.getPhone());
+        setTuition(lb.getTuition());
+        setEnrollment(lb.getEnrollment());
+
+    }//end of updateFrom method
+
+    public String adminLogin() {
+        System.out.println("Login Fired");
+        errorResponse = "";
+        UniversityBean temp;
+        if ((temp = UniversityLoginDA.validInfo(getAdminUsername(), getAdminPassword())) != null) {
+            System.out.println("Good Login");
+            login = true;
+            updateFrom(temp);
+            return "University.xhtml";
+
+        }//end of if statement
+        return "badLogin.xhtml";
+
+    }//end of login
 
 }

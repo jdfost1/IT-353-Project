@@ -21,6 +21,9 @@
                     Student Enrollment: <p:inputText id="enrollment" value="#{UniversityBean.enrollment}"></p:inputText>
                     Upload University Profile Picture: <p:fileUpload fileUploadListener="#{fileUploadController.upload}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1000000"/>
                         <br/>
+                        University Administrator Username: <p:inputText id="username" value="#{UniversityBean.username}"></p:inputText>
+                        Password: <p:password id="password" value="#{UniversityBean.password}"/>
+                        Confirm Password: <p:password id="password2" />
 
                         <p:commandButton id="submit" value="Submit" action="#{UniversityBean.createUniversity()}"></p:commandButton>
 
