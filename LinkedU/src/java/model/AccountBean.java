@@ -159,15 +159,15 @@ public class AccountBean {
 
     }//end of updateFrom method
     
-    public String searchStudent(String student){
+    public String searchStudent(){
     AccountBean temp;
         if ((temp = AccountDA.searchStudent(student)) != null) {
             System.out.println("Successful Search");
             
             updateFrom(temp);
             setProfileResponse(this.firstName + " " + this.lastName
-                    + "! Welcome to "+ this.firstName + "'s account!");
-            return "profile.xhtml";
+                    + "! Welcome to "+ this.firstName + "'s profile!");
+            return "studentSearchResults.xhtml";
         }//end of else statement
         return "badLogin.xhtml";
     

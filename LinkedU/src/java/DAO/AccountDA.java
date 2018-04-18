@@ -34,7 +34,7 @@ public class AccountDA {
         try {
             String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
             Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
-            String queryString = "select * from itkstu.userlogin where LASTNAME LIKE '" + student + "%'";
+            String queryString = "select * from itkstu.userlogin where LASTNAME LIKE '" + student + "'";
             Statement stmt = DBConn.createStatement();
             ResultSet rs = stmt.executeQuery(queryString);
             boolean r = rs.next();

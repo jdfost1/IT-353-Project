@@ -14,11 +14,20 @@ import javax.faces.bean.SessionScoped;
  *
  * @author IT353S833
  */
-@ManagedBean(name="UniversityBean")
+@ManagedBean(name = "UniversityBean")
 @SessionScoped
 public class UniversityBean {
 
+    String university;
     String collegeName;
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String univeristy) {
+        this.university = univeristy;
+    }
     String city;
     String state;
     String address;
@@ -51,11 +60,12 @@ public class UniversityBean {
      */
     public UniversityBean() {
     }
-    public String createUniversity(){
+
+    public String createUniversity() {
         storeUniversityToDB(this);
-        
-    //add university to data base
-    return "University.xhtml";
+
+        //add university to data base
+        return "University.xhtml";
     }//end of create university
 
     public String getCollegeName() {
@@ -128,6 +138,11 @@ public class UniversityBean {
 
     public void setDean(String dean) {
         this.dean = dean;
+    }
+
+    public String searchUniversity() {
+
+        return null;
     }
 
 }
