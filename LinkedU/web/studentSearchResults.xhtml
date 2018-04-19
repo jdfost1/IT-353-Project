@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+     >
     <h:head>
         <title>Student Search Results</title>
     </h:head>
@@ -11,19 +11,19 @@
         include profile picture
         each student should be clickable and take you to their profile page-->
         <h1>Students found</h1>
-        <div id="studentList">
-            <h:outputLabel value="#{AccountBean.studentsArray[0]}"></h:outputLabel><br/>
-            <h:outputLabel value="#{AccountBean.studentsArray[1]}"></h:outputLabel><br/>
-            <h:outputLabel value="#{AccountBean.studentsArray[2]}"></h:outputLabel><br/>
-            <h:outputLabel value="#{AccountBean.studentsArray[3]}"></h:outputLabel><br/>
-            <h:outputLabel value="#{AccountBean.studentsArray[4]}"></h:outputLabel><br/>
+      
+            <h:form>
+                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[0]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[0])}"></h:commandLink><br/>
+                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[1]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[1])}"></h:commandLink><br/>
+                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[2]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[2])}"></h:commandLink><br/>
+                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[3]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[3])}"></h:commandLink><br/>
+                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[4]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[4])}"></h:commandLink><br/>
+            </h:form>
 
-        </div>
 
-        <script>
+       
 
-            document.getElementById('studentList') = list;
-        </script>
+        
     </h:body>
 </html>
 
