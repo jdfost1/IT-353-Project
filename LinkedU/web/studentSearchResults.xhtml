@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-       xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Student Search Results</title>
     </h:head>
@@ -10,16 +10,20 @@
         <!--        list of students from database search
         include profile picture
         each student should be clickable and take you to their profile page-->
-        <div align="center">Students Found<br/>
-         <h:form>
-            <p:outputLabel id="firstName" value="#{AccountBean.firstName}"></p:outputLabel>
-            <p:outputLabel id="lastName" value="#{AccountBean.lastName}"></p:outputLabel><br/><br/>
-            <p:commandButton id="view" value="View Profile" action="profile.xhtml"/>
-          
+        <h1>Students found</h1>
+        <div id="studentList">
+            <h:outputLabel value="#{AccountBean.studentsArray[0]}"></h:outputLabel><br/>
+            <h:outputLabel value="#{AccountBean.studentsArray[1]}"></h:outputLabel><br/>
+            <h:outputLabel value="#{AccountBean.studentsArray[2]}"></h:outputLabel><br/>
+            <h:outputLabel value="#{AccountBean.studentsArray[3]}"></h:outputLabel><br/>
+            <h:outputLabel value="#{AccountBean.studentsArray[4]}"></h:outputLabel><br/>
 
-          
-        </h:form></div>
+        </div>
 
+        <script>
+
+            document.getElementById('studentList') = list;
+        </script>
     </h:body>
 </html>
 

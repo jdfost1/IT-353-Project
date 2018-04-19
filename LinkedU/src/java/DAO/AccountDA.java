@@ -19,8 +19,9 @@ import java.sql.Statement;
  */
 public class AccountDA {
 
-    public static AccountBean searchStudent(String student) {
+    public static String[] searchStudent(String student) {
         AccountBean lb = null;
+        String []  students = new String[25];
 
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -34,21 +35,24 @@ public class AccountDA {
         try {
             String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
             Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
-            String queryString = "select * from itkstu.userlogin where LASTNAME LIKE '" + student + "'";
+            String queryString = "select * from itkstu.userlogin WHERE LOWER(LASTNAME) LIKE LOWER ('" + student + "%') OR LOWER(FIRSTNAME) LIKE LOWER('"+ student + "%')";
             Statement stmt = DBConn.createStatement();
             ResultSet rs = stmt.executeQuery(queryString);
-            boolean r = rs.next();
-            if (r) {
-                lb = new AccountBean();
-                lb.setEmail(rs.getString("email"));
-                lb.setFirstName(rs.getString("firstName"));
-                lb.setLastName(rs.getString("lastName"));
-                lb.setMajor(rs.getString("major"));
-                lb.setHighschool(rs.getString("highschool"));
+           
+            int i=0;
+            while(rs.next()) { 
+//               
+                
+                //create array of students in data base that match search criteria
+                
+                    students[i] = rs.getString("firstName") + " " +rs.getString("lastName");
+                    i++;
+                
+             
 
-            }//end of try
+            }//end of while statement
             DBConn.close();
-            return lb;
+           return students; //return students array
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

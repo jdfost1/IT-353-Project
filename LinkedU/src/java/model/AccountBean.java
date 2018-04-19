@@ -29,6 +29,15 @@ public class AccountBean {
     String clubs;
     String gpa;
     String sat;
+    String[] studentsArray;
+
+    public String[] getStudentsArray() {
+        return studentsArray;
+    }
+
+    public void setStudentsArray(String[] studentsArray) {
+        this.studentsArray = studentsArray;
+    }
 
     public String getProfileResponse() {
         return profileResponse;
@@ -160,11 +169,15 @@ public class AccountBean {
     }//end of updateFrom method
     
     public String searchStudent(){
-    AccountBean temp;
-        if ((temp = AccountDA.searchStudent(student)) != null) {
+    
+        if ((studentsArray = AccountDA.searchStudent(student)) != null) {
             System.out.println("Successful Search");
             
-            updateFrom(temp);
+            //print array of students to console for testing
+            for(int i=0;i<studentsArray.length;i++)
+                System.out.println(studentsArray[i]);
+            //update bean for single student return
+           //updateFrom(temp);
             setProfileResponse(this.firstName + " " + this.lastName
                     + "! Welcome to "+ this.firstName + "'s profile!");
             return "studentSearchResults.xhtml";

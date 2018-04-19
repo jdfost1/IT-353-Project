@@ -2,15 +2,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-       xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>LinkedU.com Profile View</title>
     </h:head>
+
     <h:body>
+         <strong>
+            <h:form>
+                <h:link value="My account " outcome="account.xhtml" style="color:white;" />
+                <h:link value="Sign Out" outcome="login.xhtml" style="color:white;"/>
+
+            </h:form>
+        </strong>
         <form>
-        <center><h1><h:outputLabel id="first" value="#{AccountBean.profileResponse}"></h:outputLabel></h1></center><br/>
+            <center><h1><h:outputLabel id="first" value="#{AccountBean.profileResponse}"></h:outputLabel></h1></center><br/>
         </form>
-         <h:form>
+        <h:form>
             First Name: <p:outputLabel id="firstName" value="#{AccountBean.firstName}"></p:outputLabel><br/><br/>
             Last  Name: <p:outputLabel id="lastName" value="#{AccountBean.lastName}"></p:outputLabel><br/><br/>
             Email Address: <p:outputLabel id="email" value="#{AccountBean.email}"></p:outputLabel><br/><br/>
@@ -24,9 +32,9 @@
             Awards: <p:outputLabel id="awards" value="#{AccountBean.awards}"></p:outputLabel><br/><br/>
             Clubs: <p:outputLabel id="clubs" value="#{AccountBean.clubs}"></p:outputLabel><br/><br/>
 
-          
+
         </h:form>
     </h:body>
-    
+
 </html>
 

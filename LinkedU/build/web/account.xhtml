@@ -14,52 +14,58 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </h:head>
-     <div style="background-color:white;">
 
-<center><img src="resources/images/logo.PNG" alt=""/></center>
-     </div>
+
 
     <h:body>
+        <strong>
+            <h:form>
+                <h:link value="My account " outcome="account.xhtml" style="color:white;" />
+                <h:link value="Sign Out" outcome="login.xhtml" style="color:white;"/>
+
+            </h:form>
+        </strong>
+
         <h:form>
             <center><h1><h:outputLabel id="first" >My Profile</h:outputLabel></h1></center><br/>
-           
+
             <div align="left" style="background-color:slategray">
-            <h2><h:outputLabel id="searchbar" value="Search for Student"></h:outputLabel></h2>
-            <h:inputText id="student" value="#{AccountBean.student}"/>
-            <p:commandButton id="studentSearch" value="search" action="#{AccountBean.searchStudent()}"/>
+                <h2><h:outputLabel id="searchbar" value="Search for Student"></h:outputLabel></h2>
+                <h:inputText id="student" value="#{AccountBean.student}"/>
+                <p:commandButton id="studentSearch" value="search" action="#{AccountBean.searchStudent()}"/>
             </div>
-            
+
             <div align="left" style="background-color:slategray">
-            <h2><h:outputLabel id="searchbar2" value="Search for University"></h:outputLabel></h2>
-            <h:inputText id="university" value="#{UniversityBean.university}"/>
-            <p:commandButton id="UniversitySearch" value="search" action="#{UniversityBean.searchUniversity()}"/>
+                <h2><h:outputLabel id="searchbar2" value="Search for University"></h:outputLabel></h2>
+                <h:inputText id="university" value="#{UniversityBean.university}"/>
+                <p:commandButton id="UniversitySearch" value="search" action="#{UniversityBean.searchUniversity()}"/>
             </div>
         </h:form>
         <br/><br/>
-        
-               <center> <h3 class="updateSpan">Is your account complete? Completed profiles generate more views.</h3></center>
-               <div style="background-color:slategray" align="center">
-        <h:form>
-            First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br/><br/>
-            Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br/><br/>
-            Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br/><br/>
-            Username: <p:outputLabel id="username" value="#{LoginBean.username}"></p:outputLabel><br/><br/>
-            High School <p:outputLabel id="highSchool" value="#{LoginBean.highSchool}"></p:outputLabel><br/><br/>
-            Current Sports: <p:outputLabel  id="sports" value="#{LoginBean.sports}"></p:outputLabel><br/><br/>
-            GPA: <p:outputLabel  id="gpa" value="#{LoginBean.gpa}"></p:outputLabel><br/><br/>
-            SAT SCORE: <p:outputLabel  id="sat" value="#{LoginBean.sat}"></p:outputLabel><br/><br/>
-            University of Choice: <p:outputLabel  id="university" value="#{LoginBean.university}"></p:outputLabel><br/><br/>
-            Major of Choice: <p:outputLabel id="major" value="#{LoginBean.major}"></p:outputLabel><br/><br/>
-            Awards: <p:outputLabel id="awards" value="#{LoginBean.awards}"></p:outputLabel><br/><br/>
-            Clubs: <p:outputLabel id="clubs" value="#{LoginBean.clubs}"></p:outputLabel><br/><br/>
 
-            <!--            prime face style not applying to command buttons??-->
-            <p:commandButton id="updateAccount" value="Update" action="accountUpdate.xhtml"/>
-            <p:commandButton id="homepage" value="Return Home" action="index.xhtml"/>
-        </h:form>
-                   </div>
-        
+        <center> <h3 class="updateSpan">Is your account complete? Completed profiles generate more views.</h3></center>
+        <div style="background-color:slategray" align="center">
+            <h:form>
+                First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br/><br/>
+                Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br/><br/>
+                Email Address: <p:outputLabel id="email" value="#{LoginBean.email}"></p:outputLabel><br/><br/>
+                Username: <p:outputLabel id="username" value="#{LoginBean.username}"></p:outputLabel><br/><br/>
+                High School <p:outputLabel id="highSchool" value="#{LoginBean.highSchool}"></p:outputLabel><br/><br/>
+                Current Sports: <p:outputLabel  id="sports" value="#{LoginBean.sports}"></p:outputLabel><br/><br/>
+                GPA: <p:outputLabel  id="gpa" value="#{LoginBean.gpa}"></p:outputLabel><br/><br/>
+                SAT SCORE: <p:outputLabel  id="sat" value="#{LoginBean.sat}"></p:outputLabel><br/><br/>
+                University of Choice: <p:outputLabel  id="university" value="#{LoginBean.university}"></p:outputLabel><br/><br/>
+                Major of Choice: <p:outputLabel id="major" value="#{LoginBean.major}"></p:outputLabel><br/><br/>
+                Awards: <p:outputLabel id="awards" value="#{LoginBean.awards}"></p:outputLabel><br/><br/>
+                Clubs: <p:outputLabel id="clubs" value="#{LoginBean.clubs}"></p:outputLabel><br/><br/>
+
+                <!--            prime face style not applying to command buttons??-->
+                <p:commandButton id="updateAccount" value="Update" action="accountUpdate.xhtml"/>
+                <p:commandButton id="homepage" value="Return Home" action="index.xhtml"/>
+            </h:form>
+        </div>
+
         <br/><br/>
     </h:body>
-   
+
 </html>
