@@ -44,7 +44,8 @@ Josh (working on..)
 -------------------------
 
 
-
+Luke ideas...
+------------------
 
 
 
@@ -52,5 +53,7 @@ Luke (working on....)
 ------------------------
 *apply for admission??
 *university highlight page from index.html??? top university list and overview??
+*help me with return home links on all pages and sign out link??
+*styling up university profile page??
 
 ------------------------
