@@ -13,8 +13,9 @@
 		*********PROJECT CHECK LIST FROM PROFESSOR***************************************************************
 *Sign-in User (COMPLETE)
 *Sign up Account (COMPLETE)
--Search for Students
--Search for Universities
+-Search for Students (COMPLETE)
+-Search for Universities (COMPLETE)
+
 -View Detailed Posting (of a student/university)
 -Apply for Admission (which may necessitate special, additional info from students depending on the target universities)
 -Upload Materials (including image(s) and video(s)) 
@@ -37,8 +38,8 @@
 
 Josh (working on..)
 -------------------------
-*signup page and login page backend (database functionality)
-*working on search for students method with db functionality
+*will be working on appointment page and database. SCHEDULE APPOINTMENT w/ email confirmation
+*Working on uploading files (profile pictures to database) UPLOAD FILES
 
 -------------------------
 
@@ -49,7 +50,7 @@ Josh (working on..)
 
 Luke (working on....)
 ------------------------
-*
-*
+*apply for admission??
+*university highlight page from index.html??? top university list and overview??
 
 ------------------------

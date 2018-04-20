@@ -10,16 +10,18 @@
         <!--        list of students from database search
         include profile picture
         each student should be clickable and take you to their profile page-->
-        <h1>Students found</h1>
+         <div align="center">
+             <h:graphicImage value="resources/images/class3.jpg"/><br/>
+         <h1>Students found</h1>
       
             <h:form>
-                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[0]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[0])}"></h:commandLink><br/>
-                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[1]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[1])}"></h:commandLink><br/>
-                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[2]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[2])}"></h:commandLink><br/>
-                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[3]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[3])}"></h:commandLink><br/>
-                <h:commandLink style="color:white;" value="#{AccountBean.studentsArray[4]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[4])}"></h:commandLink><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{AccountBean.studentsArray[0]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[0])}"></h:commandLink><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{AccountBean.studentsArray[1]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[1])}"></h:commandLink><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{AccountBean.studentsArray[2]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[2])}"></h:commandLink><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{AccountBean.studentsArray[3]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[3])}"></h:commandLink><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{AccountBean.studentsArray[4]}" action="#{AccountBean.searchStudent(AccountBean.studentsArray[4])}"></h:commandLink><br/>
             </h:form>
-
+</div>
 
        
 
