@@ -34,6 +34,7 @@ public class AccountBean {
     String gpa;
     String sat;
     String[] studentsArray;
+  
     JSONArray mJSONArray;
 
     public String[] getStudentsArray() {

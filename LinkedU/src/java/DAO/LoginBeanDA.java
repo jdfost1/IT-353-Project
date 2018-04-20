@@ -44,7 +44,7 @@ public class LoginBeanDA {
                 lb.setLastName(rs.getString("lastName"));
                 lb.setAwards(rs.getString("awards"));
                 lb.setHighSchool(rs.getString("highschool"));
-               lb.setUniversity(rs.getString("university"));
+                lb.setUniversity(rs.getString("university"));
                 lb.setSports(rs.getString("sports"));
                 lb.setMajor((rs.getString("major")));
                 //lb.setGpa(Double.parseDouble("gpa"));

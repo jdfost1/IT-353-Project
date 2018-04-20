@@ -6,9 +6,22 @@
         <title>University Search Results</title>
     </h:head>
     <h:body>
-        <!--        list of students from database search
-        include profile picture
-        each student should be clickable and take you to their profile page-->
+       
+            <h:graphicImage value="resources/images/university1.jpg"/>
+        
+       <h:outputText>Universities Found</h:outputText><br/>
+        <h:outputText>Displaying top 5 search results</h:outputText>
+
+      
+            <h:form>
+                <h:commandLink style="color:white; font-size:30px;"  value="#{UniversityBean.universityArray[0]} " action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[0])}" ></h:commandLink><br/><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[1]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[1])}"></h:commandLink><br/><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[2]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[2])}"></h:commandLink><br/><br/>
+                <h:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[3]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[3])}"></h:commandLink><br/><br/>
+       
+
+        </h:form>
+            
     </h:body>
 </html>
 

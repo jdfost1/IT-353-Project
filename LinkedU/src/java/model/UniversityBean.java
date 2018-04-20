@@ -20,6 +20,15 @@ public class UniversityBean {
 
     String university;
     String collegeName;
+    String[] universityArray;
+
+    public String[] getUniversityArray() {
+        return universityArray;
+    }
+
+    public void setUniversityArray(String[] universityArray) {
+        this.universityArray = universityArray;
+    }
 
     public String getUniversity() {
         return university;
@@ -140,9 +149,43 @@ public class UniversityBean {
         this.dean = dean;
     }
 
-    public String searchUniversity() {
+    //method to update current bean
 
+    public void updateFrom(UniversityBean ub) {
+
+        setCollegeName(ub.getCollegeName());
+        setCity(ub.getCity());
+        setState(ub.getState());
+        setMascot(ub.getMascot());
+        setPhone(ub.getPhone());
+        setTuition(ub.getTuition());
+        setAddress(ub.getAddress());
+        setEnrollment(ub.getEnrollment());
+
+    }//end of updateFrom method
+
+    public String searchUniversities() {
+
+        if ((universityArray = UniversityDA.searchUniversities(university)) != null) {
+            System.out.println("Successfull Search");
+
+            //print array to console for testing
+            for (int i = 0; i < universityArray.length; i++) {
+                System.out.println(universityArray[i]);
+            }//end of for loop
+            return "UniversitySearchResults.xhtml";
+        }//end of if
         return null;
     }
+//method to search for university chosen from results list to return single universities profile page
+    public String searchUniversity(String university) {
+        UniversityBean temp;
+        if ((temp = UniversityDA.searchUniversity(university)) != null) {
+            System.out.println("Successfull Search");
+            updateFrom(temp);
+            return "UniversityProfile.xhtml";
+        }//end of if statement
+        return null;
+    }//end of searchStudent method
 
 }
