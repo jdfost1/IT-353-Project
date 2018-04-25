@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
@@ -10,18 +11,31 @@
     </h:head>
     
     <body>
+         <h:form>
+               
+                <h:link value="Home" outcome="index.xhtml" style="color:white;"/>
+
+            </h:form>
         <center><img src="resources/images/logo.PNG" alt=""/></center>
         <center><h2>Sign up and join linkedU! </h2></center>
-        <div align="center"><h:form>
-            <h:panelGrid columns="4" cellpadding="5">
+        <div align="center" style="font-size:20px"><h:form>
+                <h:panelGrid columns="2" cellpadding="7" cellspacing="2" border="2" bgcolor="midnightblue">
+                 Username: <p:inputText id="username" value="#{LoginBean.username}"><f:ajax event="keyup" execute="@this" render="userIdMessage"/></p:inputText><br/>
+                <h:outputLabel  style="color:red" value="#{LoginBean.userNameResponse} " id="userIdMessage" /><br/>
+                Password: <p:password placeholder="enter password" id="password" value="#{LoginBean.password}"></p:password><br/>
+                Confirm Password: <p:password placeholder="confirm password" id="confirm" value="#{LoginBean.confirmPassword}" >
+                    <f:ajax event="keyup" execute="password confirm" render="passwordStatus"/>
+                </p:password>
+                <h:outputLabel style="color:red" id="passwordStatus" value="#{LoginBean.passwordStatus}"/>
+                </h:panelGrid><br/><br/><br/>
+            <h:panelGrid columns="4" cellpadding="5" border="2" bgcolor="midnightblue">
                
                 First Name: <p:inputText id="firstName" value="#{LoginBean.firstName}" required="true"></p:inputText>
                 Last  Name: <p:inputText id="lastName" value="#{LoginBean.lastName}"></p:inputText>
                 Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText>
-                Username: <p:inputText id="username" value="#{LoginBean.username}"></p:inputText>
+               
                 High School <p:inputText id="highSchool" value="#{LoginBean.highSchool}"></p:inputText>
-                Password: <p:password placeholder="enter password" id="password" value="#{LoginBean.password}"></p:password>
-                Confirm Password: <p:password placeholder="confirm password" id="password2" ></p:password>
+                
                 Current Sports: <p:inputText placeholder="(optional)" id="sports" value="#{LoginBean.sports}"></p:inputText>
                 GPA: <p:inputText placeholder="0.00" id="gpa" value="#{LoginBean.gpa}"></p:inputText>
                 SAT SCORE: <p:inputText placeholder="(optional)" id="sat" value="#{LoginBean.sat}"></p:inputText>
@@ -29,9 +43,10 @@
                 Major of Choice: <p:inputText id="major" value="#{LoginBean.major}"></p:inputText>
                 Awards: <p:inputText placeholder="(optional)" id="awards" value="#{LoginBean.awards}"></p:inputText>
                 Clubs: <p:inputText placeholder="(optional)" id="clubs" value="#{LoginBean.clubs}"></p:inputText>
+<!--               Profile Summary: <p:inputTextarea value="#" rows="5" cols="30"  maxlength="100"/>-->
                 Upload Profile Picture: 
 
-        <p:fileUpload fileUploadListener="#{fileUploadController.upload}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1000000"/>
+<!--        <p:fileUpload fileUploadListener="" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1000000"/>-->
        
     <br/>
                 

@@ -8,6 +8,7 @@ package model;
 import DAO.LoginBeanDA;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import java.io.Serializable;
 
 /**
  *
@@ -15,7 +16,7 @@ import javax.faces.bean.RequestScoped;
  */
 @ManagedBean(name = "LoginBean")
 @RequestScoped
-public class LoginBean {
+public class LoginBean implements Serializable {
 
     private String username;
     private String password;
@@ -34,6 +35,55 @@ public class LoginBean {
     private String clubs;
     private boolean login = false;
     private String accountResponse;
+    private String picture = "";
+    private String bio = "";
+    private String userNameResponse;
+    private String passwordStatus;
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        if (confirmPassword.equals(password)) {
+            passwordStatus = "";
+        } else {
+            passwordStatus = "PASSWORDS DO NOT MATCH";
+        }
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getPasswordStatus() {
+        return passwordStatus;
+    }
+
+    public void setPasswordStatus(String passwordStatus) {
+        this.passwordStatus = passwordStatus;
+    }
+
+    public String getUserNameResponse() {
+        return userNameResponse;
+    }
+
+    public void setUserNameResponse(String userNameResponse) {
+        this.userNameResponse = userNameResponse;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public String getSports() {
         return sports;
@@ -163,8 +213,16 @@ public class LoginBean {
     }
 
     public void setUsername(String username) {
+        userNameResponse = validateUserName(username);
+        System.out.println("set user name to :" + username);
         this.username = username;
     }
+
+    public String validateUserName(String user) {
+        String temp = LoginBeanDA.validateUserName(user);
+        System.out.println("validation result :" + temp);//print to console for testing
+        return temp;
+    }//end of validate UserName method
 
     public String getPassword() {
         return password;
@@ -260,6 +318,7 @@ public class LoginBean {
     }//end of check name
 
     public String createProfile() {
+        System.out.println(AccountBean.profilePicture);
         int error = 0;
         errorResponse = "";
 
@@ -273,5 +332,5 @@ public class LoginBean {
         return "account.xhtml";
 
     }//end of create profile method
-    
+
 }

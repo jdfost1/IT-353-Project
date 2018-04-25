@@ -7,6 +7,7 @@
         <title>LinkedU - Login</title>
     </h:head>
     <h:body>
+        <h:link value="Home" outcome="index.xhtml" style="color:white;"/>
          <div style="background-color:white;">
 
 <center><img src="resources/images/logo.PNG" alt=""/></center>
@@ -14,13 +15,11 @@
         <div align="center"><br/><strong>Student Login</strong><br/><br/>
        <h:form>
            Username:
-           <h:inputText id="user" value="#{LoginBean.username}">
-           </h:inputText><br/><br/>
+           <p:inputText id="user" value="#{LoginBean.username}">
+           </p:inputText><br/><br/>
            
            Password:
-           <h:inputSecret id="password" value="#{LoginBean.password}">
-              
-           </h:inputSecret><br/>
+           <p:password id="password" value="#{LoginBean.password}"/><br/>
            <p:commandButton value="Login" action="#{LoginBean.login()}"/>
        </h:form></div>
     </h:body>

@@ -9,6 +9,7 @@ import DAO.UniversityDA;
 import static DAO.UniversityDA.storeUniversityToDB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
 
 /**
  *
@@ -16,7 +17,7 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean(name = "UniversityBean")
 @SessionScoped
-public class UniversityBean {
+public class UniversityBean implements Serializable{
 
     String university;
     String collegeName;

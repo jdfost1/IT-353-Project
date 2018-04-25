@@ -18,6 +18,7 @@ and open the template in the editor.
 
 
     <h:body>
+<!--        <p:graphicImage value="#{AccountBean.profilePicture}" />-->
         <strong>
             <h:form>
                 <h:link value="My account " outcome="account.xhtml" style="color:white;" />
@@ -29,22 +30,22 @@ and open the template in the editor.
         <h:form>
             <center><h1><h:outputLabel id="first" >My Profile</h:outputLabel></h1></center><br/>
 
-            <div align="left" style="background-color:slategray">
+            <div align="left" style="background-color:midnightblue">
                 <h2><h:outputLabel id="searchbar" value="Search for Student"></h:outputLabel></h2>
-                <h:inputText id="student" value="#{AccountBean.student}"/>
+                <p:inputText id="student" value="#{AccountBean.student}"/>
                 <p:commandButton id="studentSearch" value="search" action="#{AccountBean.searchStudents()}"/>
             </div>
 
-            <div align="left" style="background-color:slategray">
+            <div align="left" style="background-color:midnightblue">
                 <h2><h:outputLabel id="searchbar2" value="Search for University"></h:outputLabel></h2>
-                <h:inputText id="university" value="#{UniversityBean.university}"/>
+                <p:inputText id="university" value="#{UniversityBean.university}"/>
                 <p:commandButton id="UniversitySearch" value="search" action="#{UniversityBean.searchUniversities()}"/>
             </div>
         </h:form>
         <br/><br/>
 
         <center> <h3 class="updateSpan">Is your account complete? Completed profiles generate more views.</h3></center>
-        <div style="background-color:slategray" align="center">
+        <div style="background-color:midnightblue" align="center">
             <h:form>
                 First Name: <p:outputLabel id="firstName" value="#{LoginBean.firstName}"></p:outputLabel><br/><br/>
                 Last  Name: <p:outputLabel id="lastName" value="#{LoginBean.lastName}"></p:outputLabel><br/><br/>

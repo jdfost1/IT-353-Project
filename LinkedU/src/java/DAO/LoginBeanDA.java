@@ -48,13 +48,7 @@ public class LoginBeanDA {
                 lb.setSports(rs.getString("sports"));
                 lb.setMajor((rs.getString("major")));
                 //lb.setGpa(Double.parseDouble("gpa"));
-               // lb.setSat(Integer.parseInt(rs.getString("sat")));
-                              
-                
-
-              
-
-                
+                // lb.setSat(Integer.parseInt(rs.getString("sat")));
 
             }
             DBConn.close();
@@ -93,6 +87,45 @@ public class LoginBeanDA {
         }
         return false;
     }//end of check user name method
+    public static String validateUserName(String userName) {
+       String validationResponse =""; //create response string to return to user
+        //try to connect to apache derby driver
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+        } catch (ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }//end of catch for connecting to driver
+
+        //try to create connection to database
+        try {
+            String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
+            Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
+
+            //create query to execute in database
+            String queryString = "select * from itkstu.userlogin where LOWER(USERNAME) = LOWER('" + userName + "')";
+            Statement stmt = DBConn.createStatement();
+            ResultSet rs = stmt.executeQuery(queryString);
+            
+             //check if result set found any matching user names
+            boolean r = rs.next();
+            if(r)
+               validationResponse = "USER NAME TAKEN"; 
+            else
+                validationResponse = ""; //set response to show nothing
+            
+           
+
+
+     
+        DBConn.close();
+        }catch (SQLException e){
+        System.err.println(e.getMessage());
+        }
+        
+
+        return validationResponse;
+    }//end of validate user name
 
     public static int storeCustomerToDB(LoginBean cust) {
         try {
@@ -122,6 +155,8 @@ public class LoginBeanDA {
                     + "', '" + cust.getClubs()
                     + "', '" + cust.getGpa()
                     + "', '" + cust.getSat()
+                    + "', '" + cust.getPicture()
+                    + "', '" + cust.getBio()
                     + "')";
             rowCount = stmt.executeUpdate(insertString);
             System.out.println("insert string =" + insertString);

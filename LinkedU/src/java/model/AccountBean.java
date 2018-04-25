@@ -11,6 +11,7 @@ import java.util.Arrays;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import org.primefaces.json.JSONArray;
+import java.io.Serializable;
 
 /**
  *
@@ -18,22 +19,31 @@ import org.primefaces.json.JSONArray;
  */
 @ManagedBean(name = "AccountBean")
 @SessionScoped
-public class AccountBean {
+public class AccountBean implements Serializable{
 
-    String student;
-    String username;
-    String email;
-    String firstName;
-    String lastName;
-    String highschool;
-    String sports;
-    String university;
-    String major;
-    String awards;
-    String clubs;
-    String gpa;
-    String sat;
+    public static String student;
+    public static String username;
+    public static String email;
+    public static String firstName;
+    public static String lastName;
+    public static String highschool;
+    public static String sports;
+    public static String university;
+    public static String major;
+    public static String awards;
+    public static String clubs;
+    public static String gpa;
+    public static String sat;
     String[] studentsArray;
+    public static String profilePicture;
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
   
     JSONArray mJSONArray;
 
@@ -215,5 +225,11 @@ public class AccountBean {
         return "badLogin.xhtml";
 
     }//end of search student
+public String updateProfile(){
+System.out.println();
+String page = AccountDA.updateProfile(username);
 
+
+return null;
+}//end of update profile method
 }

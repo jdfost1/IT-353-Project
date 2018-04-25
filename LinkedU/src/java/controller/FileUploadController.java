@@ -15,6 +15,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
+import model.AccountBean;
 
 import org.primefaces.event.FileUploadEvent;
  
@@ -43,7 +44,7 @@ ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance
 String absoluteDiskPath = servletContext.getRealPath(relativeWebPath);
 String absoluteFileName = absoluteDiskPath + "\\" + fileName;
 File file = new File(absoluteFileName);
-
+AccountBean.profilePicture = absoluteFileName;
                 // write the inputStream to a FileOutputStream
                 OutputStream out = new FileOutputStream(file);
              
