@@ -35,7 +35,7 @@ public class AccountBean implements Serializable{
     public static String gpa;
     public static String sat;
     String[] studentsArray;
-    public static String profilePicture;
+    public static String profilePicture="";
 
     public String getProfilePicture() {
         return profilePicture;
@@ -185,6 +185,8 @@ public class AccountBean implements Serializable{
         setUniversity(lb.getUniversity());
         setMajor(lb.getMajor());
         setClubs(lb.getClubs());
+        setProfilePicture(lb.getProfilePicture());
+        System.out.println(lb.getProfilePicture());
 
     }//end of updateFrom method
 
@@ -226,10 +228,10 @@ public class AccountBean implements Serializable{
 
     }//end of search student
 public String updateProfile(){
-System.out.println();
-String page = AccountDA.updateProfile(username);
+System.out.println("update profile being called for:" +LoginBean.username);
+ AccountDA.updateProfile(LoginBean.username);
 
 
-return null;
+return "account.xhtml";
 }//end of update profile method
 }

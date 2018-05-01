@@ -13,14 +13,19 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     </h:head>
+    
+       
     <h:body>
+            
+        
+   
         <center><h1><p:outputLabel id="first" >UPDATE ACCOUNT</p:outputLabel></h1></center>
         <h:form> <h:panelGrid columns="4" cellpadding="5">
-                First Name: <p:inputText id="firstName" value="#{AccountBean.firstName}"></p:inputText><br></br>
-                Last  Name: <p:inputText id="lastName" value="#{AccountBean.lastName}"></p:inputText><br></br>
+                First Name: <p:inputText id="firstName" value="#{LoginBean.firstName}"></p:inputText><br></br>
+                Last  Name: <p:inputText id="lastName" value="#{LoginBean.lastName}"></p:inputText><br></br>
                 
-                    Email Address: <p:inputText id="email" value="#{AccountBean.email}"></p:inputText><br></br>
-                    High School: <p:inputText id="highSchool" value="#{AccountBean.highschool}"></p:inputText><br></br>
+                    Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText><br></br>
+                    High School: <p:inputText id="highSchool" value="#{LoginBean.highSchool}"></p:inputText><br></br>
 
                     Current Sports: <p:inputText id="sports" value="#{LoginBean.sports}"></p:inputText><br></br>    
                     GPA: <p:inputText id="gpa" value="#{LoginBean.gpa}"></p:inputText><br></br>

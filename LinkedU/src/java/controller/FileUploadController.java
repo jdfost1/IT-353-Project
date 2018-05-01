@@ -5,6 +5,7 @@
  */
 package controller;
 
+import DAO.AccountDA;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 import model.AccountBean;
+import model.LoginBean;
 
 import org.primefaces.event.FileUploadEvent;
  
@@ -34,17 +36,30 @@ public class FileUploadController {
             e.printStackTrace();
         }
 
-    }  
+    }  //end of upload method
+    
+    //store file to database
+    public void storeFile(String file){
+        AccountDA.storePictureToDB(file,LoginBean.username);
+   
+            }//end of storeFile method
 
     public void copyFile(String fileName, InputStream in) {
            try {
              
-             String relativeWebPath = "\\resources\\images";
-ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
-String absoluteDiskPath = servletContext.getRealPath(relativeWebPath);
-String absoluteFileName = absoluteDiskPath + "\\" + fileName;
-File file = new File(absoluteFileName);
-AccountBean.profilePicture = absoluteFileName;
+                String relativeWebPath = "//resources\\images";
+                ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+                String absoluteDiskPath = servletContext.getRealPath(relativeWebPath);
+                String absoluteFileName = absoluteDiskPath + "\\" + fileName;
+                File file = new File(absoluteFileName);
+               // resources\\images\\
+                String addPath = "D:\\Users\\IT353S833\\Desktop\\353 project\\IT-353-Project\\LinkedU\\web\\resources\\images\\";
+                String basicFilePath = addPath + fileName;
+                AccountBean.profilePicture = (addPath+fileName);
+                LoginBean.picture =(addPath+fileName);
+                //storeFile(file.getAbsolutePath());
+                storeFile(basicFilePath);
+                System.out.println("FILE NAME ****** :"+ basicFilePath);
                 // write the inputStream to a FileOutputStream
                 OutputStream out = new FileOutputStream(file);
              
@@ -63,5 +78,6 @@ AccountBean.profilePicture = absoluteFileName;
                 } catch (IOException e) {
                 System.out.println(e.getMessage());
                 }
-    }
+          
+    }//end of copyFile method
 }

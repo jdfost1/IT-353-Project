@@ -18,24 +18,24 @@ import java.io.Serializable;
 @RequestScoped
 public class LoginBean implements Serializable {
 
-    private String username;
+    public static String username;
     private String password;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String errorResponse = "";
-    private String highSchool;
-    private String confirmPassword = "";
-    private String sports;
+    public static String email;
+    public static String firstName;
+    public static String lastName;
+    public static String errorResponse = "";
+    public static String highSchool;
+    public static String confirmPassword = "";
+    public static String sports;
     private double gpa;
     private int sat;
-    private String university;
-    private String major;
-    private String awards;
-    private String clubs;
+    public static String university;
+    public static String major;
+    public static String awards;
+    public static String clubs;
     private boolean login = false;
     private String accountResponse;
-    private String picture = "";
+    public static String picture = "";
     private String bio = "";
     private String userNameResponse;
     private String passwordStatus;
@@ -199,6 +199,9 @@ public class LoginBean implements Serializable {
         setMajor(lb.getMajor());
         setAwards(lb.getAwards());
         setClubs(lb.getClubs());
+        setPicture(lb.getPicture());
+        setUsername(lb.getUsername());
+        
 
     }
 

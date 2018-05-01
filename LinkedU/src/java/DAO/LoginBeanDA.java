@@ -39,6 +39,7 @@ public class LoginBeanDA {
             boolean r = rs.next();
             if (r) {
                 lb = new LoginBean();
+                lb.setUsername(username);
                 lb.setEmail(rs.getString("email"));
                 lb.setFirstName(rs.getString("firstName"));
                 lb.setLastName(rs.getString("lastName"));
@@ -47,6 +48,7 @@ public class LoginBeanDA {
                 lb.setUniversity(rs.getString("university"));
                 lb.setSports(rs.getString("sports"));
                 lb.setMajor((rs.getString("major")));
+                lb.setPicture(rs.getString("profilepicture"));
                 //lb.setGpa(Double.parseDouble("gpa"));
                 // lb.setSat(Integer.parseInt(rs.getString("sat")));
 

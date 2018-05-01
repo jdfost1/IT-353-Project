@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>University Search Results</title>
+        University Search Results
     </h:head>
     <h:body>
         <div align="center">
@@ -14,11 +15,11 @@
 
       
             <h:form>
-                <h:commandLink style="color:white; font-size:30px;"  value="#{UniversityBean.universityArray[0]} " action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[0])}" ></h:commandLink><br/><br/>
-                <h:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[1]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[1])}"></h:commandLink><br/><br/>
-                <h:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[2]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[2])}"></h:commandLink><br/><br/>
-                <h:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[3]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[3])}"></h:commandLink><br/><br/>
-       
+                <p:commandLink style="color:white; font-size:30px;"  value="#{UniversityBean.universityArray[0]} " action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[0])}" ></p:commandLink><br/><br/>
+                <p:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[1]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[1])}"></p:commandLink><br/><br/>
+                <p:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[2]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[2])}"></p:commandLink><br/><br/>
+                <p:commandLink style="color:white; font-size:30px;" value="#{UniversityBean.universityArray[3]}" action="#{UniversityBean.searchUniversity(UniversityBean.universityArray[3])}"></p:commandLink><br/><br/>
+     
 
         </h:form>
             </div>
