@@ -6,6 +6,7 @@
 package controller;
 
 import DAO.AccountDA;
+import DAO.UniversityLoginDA;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 import model.AccountBean;
 import model.LoginBean;
+import model.UniversityLoginBean;
 
 import org.primefaces.event.FileUploadEvent;
  
@@ -25,8 +27,21 @@ import org.primefaces.event.FileUploadEvent;
 public class FileUploadController {
 //   private String destination="D:\\Billy\\";
    private String destination=".\\";
+  
+   public static int accountType =0; // 0 means student profile and 1 means university profile
 
+    public int getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(int accountType) {
+        this.accountType = accountType;
+    }
+    public void changeAccountType(){
+    accountType = 1;
+    }
     public void upload(FileUploadEvent event) {  
+        System.out.println("ACCOUNT TYPE"+accountType);
         FacesMessage msg = new FacesMessage("Success! ", event.getFile().getFileName() + " is uploaded.");  
         FacesContext.getCurrentInstance().addMessage(null, msg);
         // Do what you want with the file        
@@ -40,7 +55,12 @@ public class FileUploadController {
     
     //store file to database
     public void storeFile(String file){
+       
+        if(accountType == 0)
         AccountDA.storePictureToDB(file,LoginBean.username);
+       else
+            UniversityLoginDA.storePictureToDB(file, UniversityLoginBean.adminUsername);
+            
    
             }//end of storeFile method
 
@@ -53,10 +73,15 @@ public class FileUploadController {
                 String absoluteFileName = absoluteDiskPath + "\\" + fileName;
                 File file = new File(absoluteFileName);
                // resources\\images\\
-                String addPath = "D:\\Users\\IT353S833\\Desktop\\353 project\\IT-353-Project\\LinkedU\\web\\resources\\images\\";
+                String addPath = "resources\\\\images\\";
                 String basicFilePath = addPath + fileName;
+                if(accountType == 0){
                 AccountBean.profilePicture = (addPath+fileName);
                 LoginBean.picture =(addPath+fileName);
+                }
+                else
+                UniversityLoginBean.picture = (addPath+fileName);
+                
                 //storeFile(file.getAbsolutePath());
                 storeFile(basicFilePath);
                 System.out.println("FILE NAME ****** :"+ basicFilePath);

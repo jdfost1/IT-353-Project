@@ -11,14 +11,15 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.UniversityLoginBean;
 /**
  *
  * @author IT353S833
  */
 public class UniversityLoginDA {
     
-    public static UniversityBean validInfo(String username, String password){
-    UniversityBean lb = null;
+    public static UniversityLoginBean validInfo(String username, String password){
+    UniversityLoginBean lb = null;
     try{
     Class.forName("org.apache.derby.jdbc.ClientDriver");
     } catch (ClassNotFoundException e){
@@ -36,7 +37,7 @@ public class UniversityLoginDA {
     boolean r = rs.next();
     
     if(r){
-        lb = new UniversityBean();
+        lb = new UniversityLoginBean();
         lb.setCollegeName(rs.getString("collegename"));
         lb.setCity(rs.getString("city"));
         lb.setState(rs.getString("state"));
@@ -45,6 +46,7 @@ public class UniversityLoginDA {
         lb.setPhone(rs.getString("phone"));
         lb.setTuition(rs.getString("tuitionrate"));
         lb.setEnrollment(rs.getString("enrollment"));
+        lb.setPicture(rs.getString("picture"));
         
         
         
@@ -60,5 +62,33 @@ public class UniversityLoginDA {
     
     
     }//end of validInfo method
+    
+    public static int storePictureToDB(String imagePath, String userName) {
+        System.out.println(" University DB METHOD CALLED image path: " + imagePath +" userName : "+userName);
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+        } catch (ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+            System.exit(0);
+        }
+        int rowCount = 0;
+        //create connection to database and create query string
+        try {
+            String myDB = "jdbc:derby://localhost:1527/LinkedUDB";
+            Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
+
+            String insertString = "UPDATE itkstu.universities SET PICTURE = '" + imagePath + "' WHERE LOWER(USERNAME) = '" + userName + "'";
+            Statement stmt = DBConn.createStatement();
+          
+            // if insert is successful, rowCount will be set to 1 (1 row inserted successfully). Else, insert failed.
+            rowCount = stmt.executeUpdate(insertString);
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return rowCount;
+
+    }//end of store picture to database method
+    
     
 }

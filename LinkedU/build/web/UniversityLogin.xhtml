@@ -2,26 +2,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      style="background-color:blue; color:white;">
     <h:head>
-       
+        <title>University Admin Login Page</title>
     </h:head>
-    <body>
+    <h:body >
+        
+    <center><h1>University Administrator's Only!</h1></center><br/>
+  
         <h:form>
             Admin Username:<br/>
             <h:inputText id="user" value="#{UniversityLoginBean.adminUsername}">
             </h:inputText><br/><br/>
-            
+
             Password: <br/>
             <h:inputSecret id="password" value="#{UniversityLoginBean.adminPassword}">
             </h:inputSecret><br/>
-            
+
             <p:commandButton value="Login" action="#{UniversityLoginBean.adminLogin()}"/>
-            
-            
-            
+
+
+
         </h:form>
-    </body>
+    </h:body>
 </html>
 

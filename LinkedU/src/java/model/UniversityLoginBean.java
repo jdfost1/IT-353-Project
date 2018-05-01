@@ -6,6 +6,8 @@
 package model;
 
 import DAO.UniversityLoginDA;
+import controller.FileUploadController;
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -15,9 +17,9 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean(name = "UniversityLoginBean")
 @SessionScoped
-public class UniversityLoginBean {
+public class UniversityLoginBean implements Serializable{
 
-    String adminUsername;
+    public static String adminUsername;
     String adminPassword;
     String errorResponse;
     private boolean login = false;
@@ -30,6 +32,15 @@ public class UniversityLoginBean {
     String enrollment;
     String mascot;
     String dean;
+    public static String picture="";
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public String getErrorResponse() {
         return errorResponse;
@@ -141,7 +152,7 @@ public class UniversityLoginBean {
         this.adminPassword = adminPassword;
     }
 
-    public void updateFrom(UniversityBean lb) {
+    public void updateFrom(UniversityLoginBean lb) {
         setCollegeName(lb.getCollegeName());
         setCity(lb.getCity());
         setState(lb.getState());
@@ -150,13 +161,15 @@ public class UniversityLoginBean {
         setPhone(lb.getPhone());
         setTuition(lb.getTuition());
         setEnrollment(lb.getEnrollment());
+        setPicture(lb.getPicture());
 
     }//end of updateFrom method
 
     public String adminLogin() {
+        FileUploadController.accountType=1;
         System.out.println("Login Fired");
         errorResponse = "";
-        UniversityBean temp;
+        UniversityLoginBean temp;
         if ((temp = UniversityLoginDA.validInfo(getAdminUsername(), getAdminPassword())) != null) {
             System.out.println("Good Login");
             login = true;
