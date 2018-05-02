@@ -165,6 +165,7 @@ public class UniversityBean implements Serializable {
         setTuition(ub.getTuition());
         setAddress(ub.getAddress());
         setEnrollment(ub.getEnrollment());
+        setPicture(ub.getPicture());
 
     }//end of updateFrom method
 

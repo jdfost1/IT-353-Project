@@ -10,8 +10,7 @@
     <h:body>
          <strong>
             <h:form>
-                <h:link value="My account " outcome="account.xhtml" style="color:white;" />
-                <h:link value="Sign Out" outcome="login.xhtml" style="color:white;"/>
+                <div align="left"><p:commandLink value="My account " action="account.xhtml" style="color:white;" /></div><div align="right"><p:commandLink value="Sign Out" action="login.xhtml" style="color:white;"/></div>
 
             </h:form>
         </strong>
@@ -23,6 +22,7 @@
         <h:form><h:graphicImage id="profilePicture" value="#{AccountBean.profilePicture}" width="325px" height="325px">
             </h:graphicImage><br/>
          </h:form>
+        <div style="background-color:midnightblue" align="center">
         <h:form>
             First Name: <p:outputLabel id="firstName" value="#{AccountBean.firstName}"></p:outputLabel><br/><br/>
             Last  Name: <p:outputLabel id="lastName" value="#{AccountBean.lastName}"></p:outputLabel><br/><br/>
@@ -38,7 +38,7 @@
             Clubs: <p:outputLabel id="clubs" value="#{AccountBean.clubs}"></p:outputLabel><br/><br/>
 
 
-        </h:form>
+        </h:form></div>
     </h:body>
 
 </html>

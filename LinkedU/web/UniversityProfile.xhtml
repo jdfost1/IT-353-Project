@@ -2,17 +2,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       >
     <h:head>
         <title>University Profile</title>
     </h:head>
     <h:body>
-        
-   <h:form>
-       <center><h:outputLabel id="universityHeader" value="#{UniversityLoginBean.collegeName}">'s Profile Page</h:outputLabel></center><br/>
-       
-   </h:form>
-        
+        <h:form>
+                <div align="left"><p:commandLink value="My account " action="account.xhtml" style="color:white;" /></div><div align="right"><p:commandLink value="Sign Out" action="login.xhtml" style="color:white;"/></div>
+
+            </h:form>
+
+        <h:form>
+            <center><h:outputLabel id="universityHeader" value="#{UniversityBean.collegeName}">'s Profile Page</h:outputLabel></center><br/>
+
+        </h:form>
+        <h:form>
+            <h:graphicImage id="profilePic" value="#{UniversityBean.picture}" width="325px" height="325px">
+            </h:graphicImage><br/>
+
+        </h:form><br/>
+        <h:form>
+
+            <p:outputLabel id="city" value="#{UniversityBean.city}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="state" value="#{UniversityBean.state}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="address" value="#{UniversityBean.address}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="phone" value="#{UniversityBean.phone}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="mascot" value="#{UniversityBean.mascot}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="enrollment" value="#{UniversityBean.enrollment}"></p:outputLabel><br/><br/>
+            <p:outputLabel id="tution" value="#{UniversityBean.tuition}"></p:outputLabel><br/><br/>
+
+
+        </h:form>
+
     </h:body>
 </html>
 

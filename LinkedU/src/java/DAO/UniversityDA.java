@@ -93,6 +93,7 @@ public class UniversityDA {
         ub.setTuition(rs.getString("tuitionrate"));
         ub.setMascot(rs.getString("mascot"));
         ub.setEnrollment(rs.getString("enrollment"));
+        ub.setPicture(rs.getString("picture"));
         
         }//end of if statement
         DBConn.close();
