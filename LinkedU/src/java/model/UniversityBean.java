@@ -17,11 +17,30 @@ import java.io.Serializable;
  */
 @ManagedBean(name = "UniversityBean")
 @SessionScoped
-public class UniversityBean implements Serializable{
+public class UniversityBean implements Serializable {
 
     String university;
     String collegeName;
     String[] universityArray;
+    String city;
+    String state;
+    String address;
+    String phone;
+    String tuition;
+    String enrollment;
+    String mascot;
+    String dean;
+    String username;
+    String password;
+    String picture;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public String[] getUniversityArray() {
         return universityArray;
@@ -38,16 +57,6 @@ public class UniversityBean implements Serializable{
     public void setUniversity(String univeristy) {
         this.university = univeristy;
     }
-    String city;
-    String state;
-    String address;
-    String phone;
-    String tuition;
-    String enrollment;
-    String mascot;
-    String dean;
-    String username;
-    String password;
 
     public String getUsername() {
         return username;
@@ -71,12 +80,7 @@ public class UniversityBean implements Serializable{
     public UniversityBean() {
     }
 
-    public String createUniversity() {
-        storeUniversityToDB(this);
-
-        //add university to data base
-        return "University.xhtml";
-    }//end of create university
+    
 
     public String getCollegeName() {
         return collegeName;
@@ -151,7 +155,6 @@ public class UniversityBean implements Serializable{
     }
 
     //method to update current bean
-
     public void updateFrom(UniversityBean ub) {
 
         setCollegeName(ub.getCollegeName());
@@ -179,6 +182,7 @@ public class UniversityBean implements Serializable{
         return null;
     }
 //method to search for university chosen from results list to return single universities profile page
+
     public String searchUniversity(String university) {
         UniversityBean temp;
         if ((temp = UniversityDA.searchUniversity(university)) != null) {

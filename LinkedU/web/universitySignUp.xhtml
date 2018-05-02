@@ -1,6 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -8,22 +13,20 @@
 
         <div align="center"><h:form>
                 <h:panelGrid columns="4" cellpadding="5">
-                    University Name: <p:inputText id="university" value="#{UniversityBean.collegeName}" required="true"></p:inputText>
-                    City: <p:inputText id="city" value="#{UniversityBean.city}"></p:inputText>
-                    State: <p:inputText id="state" value="#{UniversityBean.state}"></p:inputText>
-                    Address: <p:inputText id="address" value="#{UniversityBean.address}"></p:inputText>
-                    Phone: <p:inputText id="phone" value="#{UniversityBean.phone}"></p:inputText>
-                    Dean: <p:inputText id="dean" value="#{UniversityBean.dean}"></p:inputText>
-                    Mascot: <p:inputText id="mascot" value="#{UniversityBean.mascot}"></p:inputText>
-                    Tuition Rate: <p:inputText id="tuition" value="#{UniversityBean.tuition}"></p:inputText>
-                    Student Enrollment: <p:inputText id="enrollment" value="#{UniversityBean.enrollment}"></p:inputText>
-                    Upload University Profile Picture: <p:fileUpload fileUploadListener="#{fileUploadController.upload}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1000000"/>
-                        <br/>
-                        University Administrator Username: <p:inputText id="username" value="#{UniversityBean.username}"></p:inputText>
-                        Password: <p:password id="password" value="#{UniversityBean.password}"/>
-                        Confirm Password: <p:password id="password2" />
+                    University Name: <p:inputText id="university" value="#{UniversityLoginBean.collegeName}" required="true"></p:inputText>
+                    City: <p:inputText id="city" value="#{UniversityLoginBean.city}"></p:inputText>
+                    State: <p:inputText id="state" value="#{UniversityLoginBean.state}"></p:inputText>
+                    Address: <p:inputText id="address" value="#{UniversityLoginBean.address}"></p:inputText>
+                    Phone: <p:inputText id="phone" value="#{UniversityLoginBean.phone}"></p:inputText>
+                    Dean: <p:inputText id="dean" value="#{UniversityLoginBean.dean}"></p:inputText>
+                    Mascot: <p:inputText id="mascot" value="#{UniversityLoginBean.mascot}"></p:inputText>
+                    Tuition Rate: <p:inputText id="tuition" value="#{UniversityLoginBean.tuition}"></p:inputText>
+                    Student Enrollment: <p:inputText id="enrollment" value="#{UniversityLoginBean.enrollment}"></p:inputText>
+                    University Administrator Username: <p:inputText id="username" value="#{UniversityLoginBean.adminUsername}"></p:inputText>
+                    Password: <p:password id="password" value="#{UniversityLoginBean.adminPassword}"/>
+                    Confirm Password: <p:password id="password2" />
 
-                        <p:commandButton id="submit" value="Submit" action="#{UniversityBean.createUniversity()}"></p:commandButton>
+                    <p:commandButton id="submit" value="Submit" action="#{UniversityLoginBean.createUniversity()}"></p:commandButton>
 
                 </h:panelGrid>
             </h:form>

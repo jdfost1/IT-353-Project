@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.UniversityLoginBean;
 
 /**
  *
@@ -105,7 +106,7 @@ public class UniversityDA {
         return null;
     }//end of search university method
 
-    public static int storeUniversityToDB(UniversityBean university) {
+    public static int storeUniversityToDB(UniversityLoginBean university) {
 
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -129,8 +130,10 @@ public class UniversityDA {
                     + "', '" + university.getPhone()
                     + "', '" + university.getTuition()
                     + "', '" + university.getEnrollment()
-                    + "', '" + university.getUsername()
-                    + "', '" + university.getPassword()
+                    + "', '" + university.getAdminUsername()
+                    + "', '" + university.getAdminPassword()
+                    + "', '" + university.getPicture()
+                    
                     + "')";
             rowCount = stmt.executeUpdate(insertString);
             System.out.println("insert string =" + insertString);

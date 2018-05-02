@@ -5,6 +5,7 @@
  */
 package model;
 
+import DAO.UniversityDA;
 import DAO.UniversityLoginDA;
 import controller.FileUploadController;
 import java.io.Serializable;
@@ -164,6 +165,12 @@ public class UniversityLoginBean implements Serializable{
         setPicture(lb.getPicture());
 
     }//end of updateFrom method
+    public String createUniversity() {
+        UniversityDA.storeUniversityToDB(this);
+          FileUploadController.accountType =1;  
+        //add university to data base
+        return "University.xhtml";
+    }//end of create university
 
     public String adminLogin() {
         FileUploadController.accountType=1;
