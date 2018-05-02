@@ -1,12 +1,39 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>University Application Page</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+         <h:form>
+               
+                <p:commandLink value="My Account" action="account.xhtml" style="color:white;"/>
+
+            </h:form>
+        <div align="center">
+             <h:graphicImage id="profilePic" value="#{UniversityBean.picture}" width="325px" height="325px">
+            </h:graphicImage><br/><br/>
+            <p:outputLabel value="#{UniversityBean.collegeName}" style="font-size:25px">'s Application Page</p:outputLabel><br/>
+            <h:panelGrid columns="2" cellpadding="7" border="2" bgcolor="midnightblue">
+                
+                First Name: <p:inputText id="first" value="#{LoginBean.firstName}" readonly="true"></p:inputText><br/>
+                Last Name: <p:inputText id="last" value="#{LoginBean.lastName}" readonly="true"></p:inputText><br/>
+                Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText><br/>
+                Highschool: <p:inputText id="highschool" value="#{LoginBean.highSchool}" readonly="true"></p:inputText><br/>
+                Desired Major: <p:inputText id="major" value="#{LoginBean.major}"></p:inputText><br/>
+                Sports: <p:inputText id="sports" value="#{LoginBean.sports}"></p:inputText><br/>
+                Awards: <p:inputText id="awards" value="#{LoginBean.awards}"></p:inputText><br/>
+                GPA: <p:inputText id="gpa" value="#{LoginBean.gpa}"></p:inputText><br/>
+                Clubs: <p:inputText id="clubs" value="#{LoginBean.clubs}"></p:inputText><br/>
+                Expected Graduation Date: <p:inputText></p:inputText>
+                College: <p:inputText id="college" value="#{UniversityBean.collegeName}" readonly="true"></p:inputText><br/>
+                
+                <p:commandButton id="submit" value="Submit Application" />
+            </h:panelGrid>
+        </div>
+        
     </h:body>
 </html>
 

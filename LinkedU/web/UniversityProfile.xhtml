@@ -9,32 +9,38 @@
     </h:head>
     <h:body>
         <h:form>
-                <div align="left"><p:commandLink value="My account " action="account.xhtml" style="color:white;" /></div><div align="right"><p:commandLink value="Sign Out" action="login.xhtml" style="color:white;"/></div>
-
-            </h:form>
-
-        <h:form>
-            <center><h:outputLabel id="universityHeader" value="#{UniversityBean.collegeName}">'s Profile Page</h:outputLabel></center><br/>
+            <div align="left"><p:commandLink value="My account " action="account.xhtml" style="color:white;" /></div><div align="right"><p:commandLink value="Sign Out" action="login.xhtml" style="color:white;"/></div>
 
         </h:form>
+        <div align="center" style="font-size:25px;">
+            <h:form>
+                <h:outputLabel id="universityHeader" value="#{UniversityBean.collegeName}">'s Profile Page</h:outputLabel><br/>
+
+            </h:form></div>
         <h:form>
             <h:graphicImage id="profilePic" value="#{UniversityBean.picture}" width="325px" height="325px">
             </h:graphicImage><br/>
 
         </h:form><br/>
-        <h:form>
+        <div style="background-color:midnightblue; font-size:20px;" align="center">
+            <h:form>
 
-            <p:outputLabel id="city" value="#{UniversityBean.city}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="state" value="#{UniversityBean.state}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="address" value="#{UniversityBean.address}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="phone" value="#{UniversityBean.phone}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="mascot" value="#{UniversityBean.mascot}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="enrollment" value="#{UniversityBean.enrollment}"></p:outputLabel><br/><br/>
-            <p:outputLabel id="tution" value="#{UniversityBean.tuition}"></p:outputLabel><br/><br/>
+                City: <p:outputLabel id="city" value="#{UniversityBean.city}"></p:outputLabel><br/><br/>
+                State: <p:outputLabel id="state" value="#{UniversityBean.state}"></p:outputLabel><br/><br/>
+                Address: <p:outputLabel id="address" value="#{UniversityBean.address}"></p:outputLabel><br/><br/>
+                Phone: <p:outputLabel id="phone" value="#{UniversityBean.phone}"></p:outputLabel><br/><br/>
+                Mascot: <p:outputLabel id="mascot" value="#{UniversityBean.mascot}"></p:outputLabel><br/><br/>
+                Enrolled: <p:outputLabel id="enrollment" value="#{UniversityBean.enrollment}"></p:outputLabel><br/><br/>
+                Tuition: <p:outputLabel id="tution" value="#{UniversityBean.tuition}"></p:outputLabel><br/><br/>
 
 
-        </h:form>
-
+            </h:form>
+            <div align="center">
+                <h:form>
+                    <p:commandButton value="SCHEDULE APPOINTMENT" action="appointment.xhtml"></p:commandButton>
+                        <p:commandButton value="APPLY FOR ADMISSION" action="UniversityApplication.xhtml"/>
+                </h:form></div>
+        </div>
     </h:body>
 </html>
 
