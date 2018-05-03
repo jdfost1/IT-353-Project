@@ -16,22 +16,24 @@
              <h:graphicImage id="profilePic" value="#{UniversityBean.picture}" width="325px" height="325px">
             </h:graphicImage><br/><br/>
             <p:outputLabel value="#{UniversityBean.collegeName}" style="font-size:25px">'s Application Page</p:outputLabel><br/>
-            <h:panelGrid columns="2" cellpadding="7" border="2" bgcolor="midnightblue">
+           <h:form> <h:panelGrid columns="2" cellpadding="7" border="2" bgcolor="midnightblue">
                 
-                First Name: <p:inputText id="first" value="#{LoginBean.firstName}" readonly="true"></p:inputText><br/>
-                Last Name: <p:inputText id="last" value="#{LoginBean.lastName}" readonly="true"></p:inputText><br/>
-                Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText><br/>
-                Highschool: <p:inputText id="highschool" value="#{LoginBean.highSchool}" readonly="true"></p:inputText><br/>
-                Desired Major: <p:inputText id="major" value="#{LoginBean.major}"></p:inputText><br/>
-                Sports: <p:inputText id="sports" value="#{LoginBean.sports}"></p:inputText><br/>
-                Awards: <p:inputText id="awards" value="#{LoginBean.awards}"></p:inputText><br/>
-                GPA: <p:inputText id="gpa" value="#{LoginBean.gpa}"></p:inputText><br/>
-                Clubs: <p:inputText id="clubs" value="#{LoginBean.clubs}"></p:inputText><br/>
-                Expected Graduation Date: <p:inputText></p:inputText>
+                First Name: <p:inputText id="first" value="#{ApplicationBean.first}" ></p:inputText><br/>
+                Last Name: <p:inputText id="last" value="#{ApplicationBean.last}" ></p:inputText><br/>
+                Email Address: <p:inputText id="email" value="#{ApplicationBean.email}"></p:inputText><br/>
+                Highschool: <p:inputText id="highschool" value="#{ApplicationBean.highschool}" ></p:inputText><br/>
+                
+                Sports: <p:inputText id="sports" value="#{ApplicationBean.sport}"></p:inputText><br/>
+                
+                GPA: <p:inputText id="gpa" value="#{ApplicationBean.gpa}"></p:inputText><br/>
+                
+<!--                Expected Graduation Date: <p:calendar value="#{Application.date}" mode="inline"/>-->
+                Expected Graduation Date (mm/dd/yyyy): <p:inputText id="date" value="#{ApplicationBean.date}"></p:inputText><br/>
                 College: <p:inputText id="college" value="#{UniversityBean.collegeName}" readonly="true"></p:inputText><br/>
+                Cover Letter: <p:inputTextarea id="clubs" cols="30" rows="10"  value="#{ApplicationBean.coverLetter}"></p:inputTextarea><br/>
                 
-                <p:commandButton id="submit" value="Submit Application" />
-            </h:panelGrid>
+                <p:commandButton id="submit" value="Submit Application"  action="#{ApplicationBean.submitApplication()}"/>
+               </h:panelGrid></h:form>
         </div>
         
     </h:body>

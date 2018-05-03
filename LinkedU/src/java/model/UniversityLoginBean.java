@@ -34,6 +34,12 @@ public class UniversityLoginBean implements Serializable{
     String mascot;
     String dean;
     public static String picture="";
+    
+     /**
+     * Creates a new instance of UniversityLoginBean
+     */
+    public UniversityLoginBean() {
+    }
 
     public String getPicture() {
         return picture;
@@ -131,11 +137,7 @@ public class UniversityLoginBean implements Serializable{
         this.dean = dean;
     }
 
-    /**
-     * Creates a new instance of UniversityLoginBean
-     */
-    public UniversityLoginBean() {
-    }
+   
 
     public String getAdminUsername() {
         return adminUsername;

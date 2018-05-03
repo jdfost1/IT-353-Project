@@ -20,7 +20,7 @@ import java.io.Serializable;
 public class UniversityBean implements Serializable {
 
     String university;
-    String collegeName;
+    public static String collegeName;
     String[] universityArray;
     String city;
     String state;
@@ -33,6 +33,13 @@ public class UniversityBean implements Serializable {
     String username;
     String password;
     String picture;
+    
+    /**
+     * Creates a new instance of UniversityBean
+     */
+    public UniversityBean() {
+    }
+
 
     public String getPicture() {
         return picture;
@@ -74,12 +81,7 @@ public class UniversityBean implements Serializable {
         this.password = password;
     }
 
-    /**
-     * Creates a new instance of UniversityBean
-     */
-    public UniversityBean() {
-    }
-
+    
     
 
     public String getCollegeName() {

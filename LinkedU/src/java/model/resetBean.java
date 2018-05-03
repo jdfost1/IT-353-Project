@@ -16,6 +16,15 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class resetBean {
 String resetEmail;
+String resetPhone;
+
+    public String getResetPhone() {
+        return resetPhone;
+    }
+
+    public void setResetPhone(String resetPhone) {
+        this.resetPhone = resetPhone;
+    }
 
     public String getResetEmail() {
         return resetEmail;
@@ -33,5 +42,9 @@ String resetEmail;
     
     return null;
             }
+    public String resetByPhone(){
+    
+    return null;
+    }
     
 }

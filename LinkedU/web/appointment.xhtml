@@ -11,22 +11,18 @@
         <div align="center">
              <h:graphicImage id="profilePic" value="#{UniversityBean.picture}" width="325px" height="325px">
             </h:graphicImage><br/><br/>
-            <p:outputLabel value="#{UniversityBean.collegeName}" style="font-size:25px">'s Schedule Appointment Page</p:outputLabel><br/>
+            <p:outputLabel value="#{UniversityBean.collegeName}" style="font-size:25px">'s Request Appointment Page</p:outputLabel><br/>
             <h:panelGrid columns="2" cellpadding="7" border="2" bgcolor="midnightblue">
                 
                 First Name: <p:inputText id="first" value="#{LoginBean.firstName}" readonly="true"></p:inputText><br/>
                 Last Name: <p:inputText id="last" value="#{LoginBean.lastName}" readonly="true"></p:inputText><br/>
                 Email Address: <p:inputText id="email" value="#{LoginBean.email}"></p:inputText><br/>
-                Highschool: <p:inputText id="highschool" value="#{LoginBean.highSchool}" readonly="true"></p:inputText><br/>
-                Desired Major: <p:inputText id="major" value="#{LoginBean.major}"></p:inputText><br/>
-                Sports: <p:inputText id="sports" value="#{LoginBean.sports}"></p:inputText><br/>
-                Awards: <p:inputText id="awards" value="#{LoginBean.awards}"></p:inputText><br/>
-                GPA: <p:inputText id="gpa" value="#{LoginBean.gpa}"></p:inputText><br/>
-                Clubs: <p:inputText id="clubs" value="#{LoginBean.clubs}"></p:inputText><br/>
-                Expected Graduation Date: <p:inputText></p:inputText>
-                College: <p:inputText id="college" value="#{UniversityBean.collegeName}" readonly="true"></p:inputText><br/>
                 
-                <p:commandButton id="submit" value="Schedule Appointment" />
+                College: <p:inputText id="college" value="#{UniversityBean.collegeName}" readonly="true"></p:inputText><br/>
+                Date: <p:calendar mode="inline"/>
+               <p:outputLabel for="time" value="Time:" />
+        <p:calendar id="time" value="#{calendarView.date11}" pattern="HH:mm" timeOnly="true"  />
+                Request: <p:commandButton id="submit" value="Request Appointment" />
             </h:panelGrid>
         </div>
     </h:body>
