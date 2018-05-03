@@ -89,8 +89,9 @@ public class LoginBeanDA {
         }
         return false;
     }//end of check user name method
+
     public static String validateUserName(String userName) {
-       String validationResponse =""; //create response string to return to user
+        String validationResponse = ""; //create response string to return to user
         //try to connect to apache derby driver
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -108,23 +109,19 @@ public class LoginBeanDA {
             String queryString = "select * from itkstu.userlogin where LOWER(USERNAME) = LOWER('" + userName + "')";
             Statement stmt = DBConn.createStatement();
             ResultSet rs = stmt.executeQuery(queryString);
-            
-             //check if result set found any matching user names
+
+            //check if result set found any matching user names
             boolean r = rs.next();
-            if(r)
-               validationResponse = "USER NAME TAKEN"; 
-            else
+            if (r) {
+                validationResponse = "USER NAME TAKEN";
+            } else {
                 validationResponse = ""; //set response to show nothing
-            
-           
+            }
 
-
-     
-        DBConn.close();
-        }catch (SQLException e){
-        System.err.println(e.getMessage());
+            DBConn.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
         }
-        
 
         return validationResponse;
     }//end of validate user name
@@ -159,6 +156,7 @@ public class LoginBeanDA {
                     + "', '" + cust.getSat()
                     + "', '" + cust.getPicture()
                     + "', '" + cust.getBio()
+                    + "', '" + cust.getPicture()
                     + "')";
             rowCount = stmt.executeUpdate(insertString);
             System.out.println("insert string =" + insertString);

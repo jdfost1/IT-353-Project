@@ -329,7 +329,7 @@ public class LoginBean implements Serializable {
             error = LoginBeanDA.storeCustomerToDB(this);
         }
         if (error == 0) {
-            return "signup.xhtml";
+            return "badLogin.xhtml";
         }
         login();
         return "account.xhtml";
