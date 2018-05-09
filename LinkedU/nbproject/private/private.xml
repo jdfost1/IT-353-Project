@@ -3,19 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/UniversityApplication.xhtml</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/profile.xhtml</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/model/UniversityBean.java</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/DAO/UniversityDA.java</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/ApplicationSuccess.xhtml</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/appointment.xhtml</file>
             <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/model/UniversityLoginBean.java</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/DAO/ApplicationDA.java</file>
             <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/DAO/LoginBeanDA.java</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/signup.xhtml</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/model/ApplicationBean.java</file>
-            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/universitySignUp.xhtml</file>
+            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/index.xhtml</file>
             <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/model/LoginBean.java</file>
+            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/web/universitySignUp.xhtml</file>
+            <file>file:/D:/Users/IT353S833/Desktop/353%20project/IT-353-Project/LinkedU/src/java/DAO/UniversityDA.java</file>
         </group>
     </open-files>
 </project-private>

@@ -30,7 +30,7 @@
 <!--                Expected Graduation Date: <p:calendar value="#{Application.date}" mode="inline"/>-->
                 Expected Graduation Date (mm/dd/yyyy): <p:inputText id="date" value="#{ApplicationBean.date}"></p:inputText><br/>
                 College: <p:inputText id="college" value="#{UniversityBean.collegeName}" readonly="true"></p:inputText><br/>
-                Cover Letter: <p:inputTextarea id="clubs" cols="30" rows="10"  value="#{ApplicationBean.coverLetter}"></p:inputTextarea><br/>
+                Esssay: <p:inputTextarea id="clubs" cols="55" rows="55"  value="#{ApplicationBean.coverLetter}"></p:inputTextarea><br/>
                 
                 <p:commandButton id="submit" value="Submit Application"  action="#{ApplicationBean.submitApplication()}"/>
                </h:panelGrid></h:form>
